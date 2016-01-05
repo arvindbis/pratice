@@ -1,0 +1,1956 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_1_3.dtd">
+
+<form-validation>
+    <global>
+        <!-- An example global constant
+        <constant>
+            <constant-name>postalCode</constant-name>
+            <constant-value>^\d{5}\d*$</constant-value>
+        </constant>
+        end example-->
+    </global>
+
+    <formset>
+        <!-- Customer Registration form -->
+        <form name="CustomerRegistrationForm">
+            <field property="customerName" depends="required,mask">
+                    <arg key="CustomerRegistrationForm.customerName" />
+                    <var>
+                    <var-name>mask</var-name>
+                    <!-- RELEASE #49 :- DEF628, AUTHOR :- OMKAR, DATE :- 22-OCT-2014 -->
+                    <var-value>^[A-Za-z\-\(\)\[\]\ .]*$</var-value>
+                    </var>
+            </field>
+            <field property="description" depends="required,maxlength">
+                    <arg key="CustomerRegistrationForm.description" />
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+        			<var><var-name>maxlength</var-name><var-value>100</var-value></var>
+        	</field>
+            <field property="state" depends="required">
+					<arg key="CustomerRegistrationForm.state" />
+			</field>
+			<field property="countryID" depends="required">
+					<arg key="CustomerRegistrationForm.country" />
+			</field>       
+            <field property="primaryContact" depends="required,mask">
+                    <arg key="CustomerRegistrationForm.primaryContact" />
+                    <var>
+			           <var-name>mask</var-name>
+					   <var-value>^[a-zA-Z ]*$</var-value>
+                    </var>
+            </field>           
+            <field property="emailId" depends="required,email">
+                    <arg key="CustomerRegistrationForm.primary.emailId" />
+            </field>
+           <!--   <field property="secondaryEmailId" depends="email">
+                    <arg key="CustomerRegistrationForm.secondary.emailId" />                                       
+            </field>-->
+            
+           <!-- <field property="secondaryEmailId" depends="validwhen">                    
+                    <arg key="CustomerRegistrationForm.secondary.emailId"/>
+                    <var>
+          			<var-name>test</var-name>
+          			<var-value>(((emailId != null) or (*this* != null)) and (emailId!=*this*))</var-value>
+        			</var>                    
+            </field>
+            -->
+            <field property="secondaryEmailId" depends="email">
+            		<arg name="email" key="CustomerRegistrationForm.secondary.emailId" />  
+            </field>
+            
+            <field property="selectedIndustryTypes" depends="required">
+                    <arg key="CustomerRegistrationForm.industryType" />
+            </field>
+            <field property="selectedProductTypes" depends="required">
+                    <arg key="CustomerRegistrationForm.productType" />
+            </field>
+            <field property="userName" depends="required,mask">
+                    <arg key="CustomerRegistrationForm.userName" />
+                    <msg name="mask" key="CustomerRegistrationForm.userName.maskmessage"/>
+                    <var>
+	                     <var-name>mask</var-name>                               
+		                 <var-value>^[a-zA-Z0-9._@]*$</var-value>
+                    </var>
+            </field>           
+            <field property="passwordQuestion1" depends="required">
+                    <arg key="CustomerRegistrationForm.passwordQuestion1" />
+            </field>
+            <field property="passwordAnswer1" depends="required">
+                    <arg key="CustomerRegistrationForm.passwordAnswer1" />
+            </field>
+            <field property="passwordQuestion2" depends="required">
+                    <arg key="CustomerRegistrationForm.passwordQuestion2" />
+            </field>
+            <field property="passwordAnswer2" depends="required">
+                    <arg key="CustomerRegistrationForm.passwordAnswer2" />
+            </field>
+		     <!-- RELEASE #53 CHR365 
+		    	  ADDED BY VIJAYKUMARJ
+		     	  DISC: TO DISPLAY SALUTATION WHEN CUSTOMER SEARCHED.
+		     	  DATE:06-FEB-2014
+		      -->
+             <field property="salutation" depends="required">
+                    <arg key="CustomerRegistrationForm.salutation" />
+             </field>
+            <field property="firstName" depends="required,mask">
+                    <arg key="CustomerRegistrationForm.firstName" />
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[a-zA-Z ]*$</var-value>
+                    </var>
+            </field>
+            <field property="middleName" depends="mask">
+                    <arg key="CustomerRegistrationForm.middleName" />
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[a-zA-Z ]*$</var-value>
+                    </var>
+            </field>
+           
+            <field property="lastName" depends="required,mask">
+                    <arg key="CustomerRegistrationForm.lastName" />
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[a-zA-Z ]*$</var-value>
+                    </var>
+            </field>
+           
+            <field property="department" depends="required,mask">
+                    <arg key="CustomerRegistrationForm.department" />
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[a-zA-Z ]*$</var-value>
+                    </var>
+            </field>
+            <field property="designation" depends="required,mask">
+                    <arg key="CustomerRegistrationForm.designation" />
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[a-zA-Z ]*$</var-value>
+                    </var>
+            </field>
+            <field property="addressLine1" depends="required">
+                    <arg key="CustomerRegistrationForm.addressLine1" />
+            </field>
+            <field property="addressLine2" depends="required">
+                    <arg key="CustomerRegistrationForm.addressLine2" />
+            </field>
+            <field property="city" depends="required,mask">
+                    <arg key="CustomerRegistrationForm.city" />
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[a-zA-Z ]*$</var-value>
+                    </var>
+            </field>
+            <!--DEF 400 RELEASE 34 Added by Muktaram C.-->
+            <field property="zip" depends="required">
+           	 	<arg key="CustomerRegistrationForm.zip" />
+            </field>
+             <!-- COMMENTED FOR DEF205 Release #23 by OMKAR
+             <field property="zip" depends="required,mask,minlength,maxlength">
+                    <arg key="CustomerRegistrationForm.zip" />
+                     <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+                    <arg position="1" name="minlength" key="${var:minlength}" resource="false"/>
+                    <var><var-name>minlength</var-name><var-value>1</var-value></var>
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+        			<var><var-name>maxlength</var-name><var-value>9</var-value></var>
+            </field> -->
+            <field property="l1contry" depends="maxlength">
+                    <arg key="CustomerRegistrationForm.l1contry" />
+                     <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>4</var-value></var>
+                    
+            </field>
+            <field property="l1area" depends="required,mask,maxlength">
+                    <arg key="CustomerRegistrationForm.l1area" />
+                     <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>6</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>                    
+        			
+            </field>
+            <field property="l1phnum" depends="required,mask,maxlength">
+                    <arg key="CustomerRegistrationForm.l1phnum" />
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>13</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+             <field property="l1extn" depends="required,mask,maxlength">
+                    <arg key="CustomerRegistrationForm.l1extn" />
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>6</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+            
+           
+            
+            
+            <!-- new code starts here -->
+            <field property="l2contry" depends="maxlength">
+                    <arg key="CustomerRegistrationForm.l2contry" />
+                     <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>4</var-value></var>
+                      
+            </field>
+                
+            <field property="l2area" depends="mask,maxlength">
+                    <arg key="CustomerRegistrationForm.l2area" />
+                     <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>6</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>                    
+        			
+            </field>
+            <field property="l2phnum" depends="mask,maxlength">
+                    <arg key="CustomerRegistrationForm.l2phnum" />
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>13</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+             <field property="l2extn" depends="mask,maxlength">
+                    <arg key="CustomerRegistrationForm.l2extn" />
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>6</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+             <field property="othersState" depends="mask">
+                    <arg key="CustomerRegistrationForm.othersState" />
+                     <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[a-zA-Z ]*$</var-value>
+                    </var>
+            </field>
+            <field property="l3contry" depends="maxlength">
+                    <arg key="CustomerRegistrationForm.l3contry" />
+                     <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>4</var-value></var>
+                     
+            </field>
+            
+            <field property="l3area" depends="mask,maxlength">
+                    <arg key="CustomerRegistrationForm.l3area" />
+                     <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>6</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>                    
+        			
+            </field>
+            <field property="l3phnum" depends="mask,maxlength">
+                    <arg key="CustomerRegistrationForm.l3phnum" />
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>13</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+              <field property="l3extn" depends="mask,maxlength">
+                    <arg key="CustomerRegistrationForm.l3extn" />
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>6</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+            <field property="l1contry" depends="required,maxlength">
+                    <arg key="CustomerRegistrationForm.l1contry" />
+                     <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>4</var-value></var>
+                     
+                     
+            </field>
+            
+             
+            <field property="f1area" depends="mask,maxlength">
+                    <arg key="CustomerRegistrationForm.faxNumber" />
+                     <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>6</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>                    
+        			
+            </field>
+            <field property="f1phnum" depends="mask,maxlength">
+                    <arg key="CustomerRegistrationForm.f1phnum" />
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>13</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+              <field property="f1extn" depends="mask,maxlength">
+                    <arg key="CustomerRegistrationForm.f1extn" />
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>6</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+            <!-- ends here -->
+            
+            
+          <field property="mobileNumber" depends="required,mask,minlength,maxlength">
+                    <arg key="CustomerRegistrationForm.mobileNumber" />
+                    <arg position="1" name="minlength" key="${var:minlength}" resource="false"/>
+                    <var><var-name>minlength</var-name><var-value>12</var-value></var>
+                     <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>12</var-value></var>                    
+        			<var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+            <field property="tnccheck" depends="required">
+                    <arg key="CustomerRegistrationForm.tnccheck" />
+            </field>
+        </form>
+        
+        
+        <!--  <form name="UserRegistrationForm">
+            <field property="userName" depends="required,mask">
+                    <arg key="UserRegistrationForm.userName" />
+                    <msg name="mask" key="UserRegistrationForm.userName.maskmessage"/>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[a-zA-Z0-9._@]*$</var-value>
+                    </var>
+            </field>
+            <field property="userPassword" depends="required,minlength,maxlength">
+                    <arg key="UserRegistrationForm.userPassword" />
+                    <arg position="1" name="minlength" key="${var:minlength}" resource="false"/>
+                    <var><var-name>minlength</var-name><var-value>8</var-value></var>
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+        			<var><var-name>maxlength</var-name><var-value>12</var-value></var>
+            </field>
+            <field property="confirmPassword" depends="required,minlength,maxlength">
+                    <arg key="UserRegistrationForm.confirmPassword" />
+                    <arg position="1" name="minlength" key="${var:minlength}" resource="false"/>
+                    <var><var-name>minlength</var-name><var-value>8</var-value></var>
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+        			<var><var-name>maxlength</var-name><var-value>12</var-value></var>
+            </field>
+            <field property="passwordQuestion1" depends="required">
+                    <arg key="UserRegistrationForm.passwordQuestion1" />
+            </field>
+            <field property="passwordAnswer1" depends="required">
+                    <arg key="UserRegistrationForm.passwordAnswer1" />
+            </field>
+            <field property="passwordQuestion2" depends="required">
+                    <arg key="UserRegistrationForm.passwordQuestion2" />
+            </field>
+            <field property="passwordAnswer2" depends="required">
+                    <arg key="UserRegistrationForm.passwordAnswer2" />
+            </field>
+            <field property="firstName" depends="required">
+                    <arg key="UserRegistrationForm.firstName" />
+            </field>            
+            <field property="lastName" depends="required">
+                    <arg key="UserRegistrationForm.lastName" />
+            </field>
+            <field property="emailId" depends="required,email">
+                    <arg key="UserRegistrationForm.emailId" />
+            </field>
+            <field property="department" depends="required">
+                    <arg key="UserRegistrationForm.department" />
+            </field>
+            <field property="designation" depends="required">
+                    <arg key="UserRegistrationForm.designation" />
+            </field>
+            <field property="addressLine1" depends="required">
+                    <arg key="UserRegistrationForm.addressLine1" />
+            </field>
+            <field property="addressLine2" depends="required">
+                    <arg key="UserRegistrationForm.addressLine2" />
+            </field>
+            <field property="city" depends="required,mask">
+                    <arg key="UserRegistrationForm.city" />
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[a-zA-Z]*$</var-value>
+                    </var>
+            </field>
+            
+            
+           <field property="state" depends="required">
+      		<arg key="UserRegistrationForm.state" />
+			</field>
+			<field property="countryID" depends="required">
+			      <arg key="UserRegistrationForm.country" />
+			</field> 
+			<field property="othersState" depends="mask">
+			   <arg key="UserRegistrationForm.othersState" />
+			   <var>
+			       <var-name>mask</var-name>
+			       <var-value>^[a-zA-Z]*$</var-value>
+			   </var>
+			</field>
+            
+           <field property="zip" depends="required,mask,minlength,maxlength">
+                    <arg key="UserRegistrationForm.zip" />
+                    <arg position="1" name="minlength" key="${var:minlength}" resource="false"/>
+                    <var>
+                     	<var-name>mask</var-name>
+                    	<var-value>^[0-9]*$</var-value>
+                    </var>  
+                    <var><var-name>minlength</var-name><var-value>6</var-value></var>
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+        			<var><var-name>maxlength</var-name><var-value>6</var-value></var>
+            </field>
+            <field property="l1contry" depends="required">
+                    <arg key="UserRegistrationForm.l1contry" />
+            </field>
+            <field property="l1area" depends="required">
+                    <arg key="UserRegistrationForm.l1area" />
+            </field>
+            <field property="l1phnum" depends="required">
+                    <arg key="UserRegistrationForm.l1phnum" />
+            </field>
+            <field property="mobileNumber" depends="required,mask,minlength">
+                    <arg key="UserRegistrationForm.mobileNumber" />
+                    <arg position="1" name="minlength" key="${var:minlength}" resource="false"/>
+                     <var><var-name>minlength</var-name><var-value>10</var-value></var>                    
+        			<var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+            <field property="tnccheck" depends="required">
+                    <arg key="UserRegistrationForm.tnccheck" />
+            </field>
+        </form>-->
+        <form name="UserRegistrationForm">
+            <field property="userName" depends="required,mask">
+                    <arg key="UserRegistrationForm.userName" />
+                    <msg name="mask" key="UserRegistrationForm.userName.maskmessage"/>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[a-zA-Z0-9._@]*$</var-value>
+                    </var>
+            </field>
+			  <field property="firstName" depends="required,mask">
+                    <arg key="UserRegistrationForm.firstName" />
+					<var>
+                    <var-name>mask</var-name>
+                    <var-value>^[a-zA-Z ]*$</var-value>
+                    </var>
+            </field>  
+            <field property="middleName" depends="mask">
+                    <arg key="UserRegistrationForm.middleName" />
+					<var>
+                    <var-name>mask</var-name>
+                    <var-value>^[a-zA-Z ]*$</var-value>
+                    </var>
+            </field>            			
+            <field property="lastName" depends="required,mask">
+                    <arg key="UserRegistrationForm.lastName" />
+					<var>
+                    <var-name>mask</var-name>
+                    <var-value>^[a-zA-Z ]*$</var-value>
+                    </var>
+            </field>
+			<field property="emailId" depends="required,email">
+                    <arg key="UserRegistrationForm.emailId" />
+            </field>
+            <field property="userPassword" depends="required,minlength,maxlength">
+                    <arg key="UserRegistrationForm.userPassword" />
+                    <arg position="1" name="minlength" key="${var:minlength}" resource="false"/>
+                    <var><var-name>minlength</var-name><var-value>8</var-value></var>
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+        			<var><var-name>maxlength</var-name><var-value>12</var-value></var>
+            </field>
+            <field property="confirmPassword" depends="required,minlength,maxlength">
+                    <arg key="UserRegistrationForm.confirmPassword" />
+                    <arg position="1" name="minlength" key="${var:minlength}" resource="false"/>
+                    <var><var-name>minlength</var-name><var-value>8</var-value></var>
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+        			<var><var-name>maxlength</var-name><var-value>12</var-value></var>
+            </field>
+            <field property="passwordQuestion1" depends="required">
+                    <arg key="UserRegistrationForm.passwordQuestion1" />
+            </field>
+            <field property="passwordAnswer1" depends="required">
+                    <arg key="UserRegistrationForm.passwordAnswer1" />
+            </field>
+            <field property="passwordQuestion2" depends="required">
+                    <arg key="UserRegistrationForm.passwordQuestion2" />
+            </field>
+            <field property="passwordAnswer2" depends="required">
+                    <arg key="UserRegistrationForm.passwordAnswer2" />
+            </field>
+            <field property="department" depends="required,mask">
+                    <arg key="UserRegistrationForm.department" />
+					<var>
+                    <var-name>mask</var-name>
+                    <var-value>^[a-zA-Z ]*$</var-value>
+                    </var>
+            </field>
+            <field property="designation"  depends="required,mask">
+                    <arg key="UserRegistrationForm.designation" />
+					<var>
+                    <var-name>mask</var-name>
+                    <var-value>^[a-zA-Z ]*$</var-value>
+                    </var>
+            </field>
+            <field property="addressLine1" depends="required">
+                    <arg key="UserRegistrationForm.addressLine1" />
+            </field>
+            <field property="addressLine2" depends="required">
+                    <arg key="UserRegistrationForm.addressLine2" />
+            </field>
+            <field property="city" depends="required,mask">
+                    <arg key="UserRegistrationForm.city" />
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[a-zA-Z\s]*$</var-value>
+                    </var>
+            </field>
+            
+            
+           <field property="state" depends="required">
+      		<arg key="UserRegistrationForm.state" />
+			</field>
+			<field property="countryID" depends="required">
+			      <arg key="UserRegistrationForm.country" />
+			</field> 
+			<field property="othersState" depends="mask">
+			   <arg key="UserRegistrationForm.othersState" />
+			   <var>
+			       <var-name>mask</var-name>
+			       <var-value>^[a-zA-Z]*$</var-value>
+			   </var>
+			</field>
+            
+           <field property="zip" depends="required,mask,minlength,maxlength">
+                    <arg key="UserRegistrationForm.zip" />
+                    <arg position="1" name="minlength" key="${var:minlength}" resource="false"/>
+                    <var>
+                     	<var-name>mask</var-name>
+                    	<var-value>^[0-9]*$</var-value>
+                    </var>  
+                    <var><var-name>minlength</var-name><var-value>1</var-value></var>
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+        			<var><var-name>maxlength</var-name><var-value>30</var-value></var>
+            </field>
+            <field property="l1contry" depends="required,maxlength">
+                    <arg key="UserRegistrationForm.l1contry" />
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>4</var-value></var>
+                    
+            </field>
+            <field property="l1area" depends="required,mask,maxlength">
+                    <arg key="UserRegistrationForm.l1area" />
+					<arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>6</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+            <field property="l1phnum" depends="required,mask,maxlength">
+                    <arg key="UserRegistrationForm.l1phnum" />
+					<arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>13</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field> 
+			<field property="l1extn" depends="required,mask,maxlength">
+                    <arg key="UserRegistrationForm.l1extn" />
+					<arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>6</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field> 
+            <field property="l2contry" depends="maxlength">
+                    <arg key="UserRegistrationForm.l2contry" />
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>4</var-value></var>
+                    
+            </field>
+            <field property="l2area" depends="mask,maxlength">
+                    <arg key="UserRegistrationForm.l2area" />
+					<arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>6</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+            <field property="l2phnum" depends="mask,maxlength">
+                    <arg key="UserRegistrationForm.l2phnum" />
+					<arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>13</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field> 
+			<field property="l2extn" depends="mask,maxlength">
+                    <arg key="UserRegistrationForm.l2extn" />
+					<arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>6</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+			
+			 <field property="l3contry" depends="maxlength">
+                    <arg key="UserRegistrationForm.l3contry" />
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>4</var-value></var>
+                    
+            </field>
+            <field property="l3area" depends="mask,maxlength">
+                    <arg key="UserRegistrationForm.l3area" />
+					<arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>6</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+            <field property="l3phnum" depends="mask,maxlength">
+                    <arg key="UserRegistrationForm.l3phnum" />
+					<arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>13</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field> 
+			<field property="l3extn" depends="mask,maxlength">
+                    <arg key="UserRegistrationForm.l3extn" />
+					<arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>6</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+
+			  <field property="f1contry" depends="maxlength">
+                    <arg key="UserRegistrationForm.f1contry" />
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>4</var-value></var>
+                    
+            </field>
+            <field property="f1area" depends="mask,maxlength">
+                    <arg key="UserRegistrationForm.f1area" />
+					<arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>6</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+            <field property="f1phnum" depends="mask,maxlength">
+                    <arg key="UserRegistrationForm.f1phnum" />
+					<arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>13</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field> 
+			<field property="f1extn" depends="mask,maxlength">
+                    <arg key="UserRegistrationForm.f1extn" />
+					<arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>6</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+		
+
+            <field property="mobileNumber" depends="required,mask,minlength,maxlength">
+                    <arg key="UserRegistrationForm.mobileNumber" />
+                    <arg position="1" name="minlength" key="${var:minlength}" resource="false"/>
+                     <var><var-name>minlength</var-name><var-value>12</var-value></var>
+                      <var><var-name>maxlength</var-name><var-value>12</var-value></var>                    
+        			<var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+            <field property="tnccheck" depends="required">
+                    <arg key="UserRegistrationForm.tnccheck" />
+            </field>
+        </form>
+        <form name="EditCustomerForm">
+        	<field property="description" depends="required">
+				<arg key="CustomerRegistrationForm.description" />
+        	</field>
+        	<field property="primaryContact" depends="required">
+				<arg key="CustomerRegistrationForm.primaryContact" />
+        	</field>
+        	<field property="icatContact" depends="required">
+				<arg key="CustomerRegistrationForm.icatContact" />
+        	</field>
+        </form>
+        
+        <!-- Abhilasha -->
+        
+        <form name="userNameForm">
+            <field property="userName" depends="required">
+                    <msg name="required" key="userNameForm.username"/>
+            </field>
+        </form>    
+       
+        <form name="userForm">
+            <field property="userAnswer1" depends="required">
+                    <msg name="required" key="userForm.password.answer1"/>
+            </field>
+            <field property="userAnswer2" depends="required">
+                    <msg name="required" key="userForm.password.answer2"/>
+            </field>
+         </form>
+       
+         <form name="changePassForm">
+            <field property="currPass" depends="required">
+            	<msg name="required" key="changePassForm.current.password"/>
+             </field>
+            <field property="newPass" depends="required,mask,minlength,maxlength">
+	            <msg name="required" key="changePassForm.new.password"/>
+	            <msg name="mask" key="changePassForm.current.password.maskmessage"/>
+	            <var>
+	                <var-name>mask</var-name>
+	                <var-value>^[0-9a-zA-Z]*$</var-value>
+	            </var>
+	            <msg name="minlength" key="changePassForm.password.minlen" />
+	            <var>
+	            	<var-name>minlength</var-name>
+	            	<var-value>8</var-value>
+	           	</var>
+	            <msg name="maxlength" key="changePassForm.password.maxlen" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>12</var-value>
+				</var>
+            </field>
+            <field property="confirmPass" depends="required,mask,minlength,maxlength">
+                    <msg name="required" key="changePassForm.confirm.password"/>
+                    <msg name="mask" key="changePassForm.current.password.maskmessage"/>
+	            <var>
+	                <var-name>mask</var-name>
+	                <var-value>^[0-9a-zA-Z]*$</var-value>
+	            </var>
+	            <msg name="minlength" key="changePassForm.confirmpassword.minlen" />
+	            <var>
+	            	<var-name>minlength</var-name>
+	            	<var-value>8</var-value>
+	           	</var>
+	            <msg name="maxlength" key="changePassForm.password.maxlen" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>12</var-value>
+				</var>
+            </field>
+         </form>
+         <form name="userDetailForm">
+            <field property="subject" depends="required">
+                    <msg name="required" key="userDetailForm.subject"/>
+            </field>
+            <field property="query" depends="required">
+                    <msg name="required" key="userDetailForm.body"/>
+            </field>
+         </form>
+         <form name="iCATDEPARTMENTMASTERForm">
+			<field property="NAME" depends="required">
+				<arg key="ERROR.ICATDEPARTMENTMASTER.NAME" />
+			</field>
+			<field property="DEPARTMENTCODE" depends="required">
+				<arg key="ERROR.ICATDEPARTMENTMASTER.DEPARTMENTCODE" />
+			</field>
+			<field property="DEPARTMENTSHORTCODE" depends="required,mask">
+				 <msg name="required" key="iCATDEPARTMENTMASTERForm.DEPARTMENTSHORTCODE"/>
+                    <msg name="mask" key="iCATDEPARTMENTMASTERForm.DEPARTMENTSHORTCODE.alphabet"/>
+	            <var>     
+	                <var-name>mask</var-name>
+	                <var-value>^[a-zA-Z]*$</var-value>
+	            </var>
+			</field>
+			
+		</form>
+		<form name="iCATROLESForm">
+			<!--<field property="NAME" depends="required">
+				<arg key="ERROR.ICATROLES.NAME" />
+			</field>  -->
+			<field property="DESCRIPTION" depends="maxlength">
+				<arg key="ERROR.DESCRIPTION" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+		</form>
+		<form name="iCATDESIGNATIONSForm">
+			<field property="NAME" depends="required">
+				<arg key="ERROR.ICATDESIGNATIONS.NAME" />
+			</field>
+			<field property="DESCRIPTION" depends="maxlength">
+				<arg key="ERROR.DESCRIPTION" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+		</form>
+		<form name="iCATCUSTOMERTYPEForm">
+			<field property="TYPENAME" depends="required">
+				<arg key="ERROR.ICATCUSTOMERTYPE.TYPENAME" />
+			</field>
+			<field property="DESCRIPTION" depends="maxlength">
+				<arg key="ERROR.DESCRIPTION" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+			<field property="REMARK" depends="maxlength">
+				<arg key="ERROR.REMARK" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+			
+		</form>
+		<form name="iCATTIERTYPEForm">
+			<field property="NAME" depends="required">
+				<arg key="ERROR.ICATTIERTYPE.NAME" />
+			</field>
+			<field property="DESCRIPTION" depends="maxlength">
+				<arg key="ERROR.DESCRIPTION" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>4000</var-value>
+				</var>
+			</field>
+			<field property="PIVALUE" depends="floatRange">
+				<arg position="0" key="ERROR.ICATTIERTYPE.PI_VALUE" />
+				<arg position="1" name="floatRange" key="${var:min}" resource="false" />
+				<arg position="2" name="floatRange" key="${var:max}" resource="false" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0.0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>100.0</var-value>
+				</var>
+			</field>
+		</form>
+		<form name="iCATTESTTYPEForm">
+			<field property="TESTNAME" depends="required">
+				<arg key="ICATTESTTYPE.TESTNAME" />
+			</field>
+			<field property="TESTCODE" depends="required">
+				<arg key="ICATTIERTYPE.TESTCODE" />
+			</field>
+			<field property="TESTOWNERID" depends="required">
+				<arg key="ICATTIERTYPE.TESTOWNER" />
+			</field>
+			<field property="TESTFACILITATORDEPARTMENTID" depends="required">
+				<arg key="ICATTIERTYPE.TESTFACILITATOR.DEPARTMENT" />
+			</field>
+			<field property="TESTFACILITATORCOORDINATORID" depends="required">
+				<arg key="ICATTIERTYPE.TESTFACILITATOR.COORDINATOR" />
+			</field>
+			<field property="DESCRIPTION" depends="maxlength">
+				<arg key="ERROR.DESCRIPTION" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+			<field property="REMARK" depends="maxlength">
+				<arg key="ERROR.REMARK" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+		</form>
+		<form name="iCATMACHINETOOLSForm">
+			<field property="NAME" depends="required">
+				<arg key="ERROR.ICATMACHINETOOLS.NAME" />
+			</field>
+			
+			<field property="DEPARTMENTID" depends="required,validwhen">
+				<arg key="ERROR.ICATMACHINETOOLS.DEPARTMENTNAME" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>((iCATMACHINETOOLSForm.DEPARTMENTID == 0) or (*this* != 0))</var-value>
+				</var>
+			</field>
+			
+			<field property="EQUIPMENTID" depends="required">
+				<arg key="ERROR.ICATMACHINETOOLS.EQUIPMENTID" />
+			</field>
+			
+			<field property="DESCRIPTION" depends="maxlength">
+				<arg key="ERROR.DESCRIPTION" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+			<field property="REMARK" depends="maxlength">
+				<arg key="ERROR.REMARK" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+		</form>
+		<form name="iCATUSERSForm">
+			<field property="userName" depends="required,mask">
+				<arg key="UserRegistrationForm.userName" />
+				<msg name="mask" key="UserRegistrationForm.userName.maskmessage"/>
+                    <var>
+                     <var-name>mask</var-name>           
+                    
+                    <var-value>^[a-zA-Z0-9._@]*$</var-value>
+                    </var>
+			</field>
+			<field property="userPassword" depends="required,minlength,maxlength">
+				<arg key="UserRegistrationForm.userPassword" />
+				<arg position="1" name="minlength" key="${var:minlength}"
+					resource="false" />
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>8</var-value>
+				</var>
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>12</var-value>
+				</var>
+			</field>
+			<field property="confirmPassword" depends="required,minlength,maxlength">
+				<arg key="UserRegistrationForm.confirmPassword" />
+				<arg position="1" name="minlength" key="${var:minlength}"
+					resource="false" />
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>8</var-value>
+				</var>
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>12</var-value>
+				</var>
+			</field>
+			<field property="passwordQuestion1" depends="required">
+				<arg key="UserRegistrationForm.passwordQuestion1" />
+			</field>
+			<field property="passwordAnswer1" depends="required">
+				<arg key="UserRegistrationForm.passwordAnswer1" />
+			</field>
+			<field property="passwordQuestion2" depends="required">
+				<arg key="UserRegistrationForm.passwordQuestion2" />
+			</field>
+			<field property="passwordAnswer2" depends="required">
+				<arg key="UserRegistrationForm.passwordAnswer2" />
+			</field>
+			
+			
+			<!-- Start :: Added by MeghaT -->
+			<!-- <field property="departmentId" depends="required">
+                    <arg key="UserRegistrationForm.department" />
+                    <var>
+					<var-name>test</var-name>
+					<var-value>((iCATUSERSForm.departmentId == 0) or (*this* != 0))</var-value>
+				</var>
+            </field>
+            <field property="designationId" depends="required">
+                    <arg key="UserRegistrationForm.designation" />
+                    <var>
+					<var-name>test</var-name>
+					<var-value>((iCATUSERSForm.designationId == 0) or (*this* != 0))</var-value>
+				</var>
+            </field>
+            
+            <field property="roleId" depends="required">
+                    <arg key="UserRegistrationForm.role" />
+                    <var>
+					<var-name>test</var-name>
+					<var-value>((iCATUSERSForm.roleId == 0) or (*this* != 0))</var-value>
+				</var>
+            </field>
+            <field property="level" depends="required">
+                    <arg key="UserRegistrationForm.level" />
+                    <var>
+					<var-name>test</var-name>
+					<var-value>((iCATUSERSForm.level == 0) or (*this* != 0))</var-value>
+				</var>
+            </field> -->
+			
+			<!-- End :: Added by MeghaT -->
+			
+			<field property="firstName" depends="required">
+				<arg key="UserRegistrationForm.firstName" />
+			</field>
+			<field property="middleName" depends="mask">
+				<arg key="UserRegistrationForm.middleName" />
+				<var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z ]*$</var-value>
+                </var>
+			</field>
+			<field property="lastName" depends="required">
+				<arg key="UserRegistrationForm.lastName" />
+			</field>
+			<field property="emailId" depends="required,email">
+				<arg key="UserRegistrationForm.emailId" />
+			</field>
+			<field property="addressLine1" depends="required">
+				<arg key="UserRegistrationForm.addressLine1" />
+			</field>
+			<field property="addressLine2" depends="required">
+				<arg key="UserRegistrationForm.addressLine2" />
+			</field>
+			 
+			<field property="state" depends="required">
+      			<arg key="UserRegistrationForm.state" />
+			</field>
+			<field property="countryID" depends="required">
+      			<arg key="UserRegistrationForm.country" />
+			</field> 
+			<field property="designationId" depends="required">
+      			<arg key="UserRegistrationForm.designation" />
+			</field>
+			
+			<field property="othersState" depends="mask">
+   				<arg key="UserRegistrationForm.othersState" />
+   				<var>	
+       			<var-name>mask</var-name>
+       				<var-value>^[a-zA-Z]*$</var-value>
+   				</var>
+			</field>
+			
+			<field property="l1contry" depends="required,maxlength">
+				<arg key="UserRegistrationForm.l1contry" />
+				<arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>4</var-value></var>
+                   
+			</field>
+			<field property="l1area" depends="required,mask,maxlength">
+				<arg key="UserRegistrationForm.l1area" />
+				  <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>6</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var> 
+			</field>
+			<field property="l1phnum" depends="required,mask,maxlength">
+				<arg key="UserRegistrationForm.l1phnum" />
+				<arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>13</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+			</field>
+			<field property="l1extn" depends="required,mask,maxlength">
+                    <arg key="UserRegistrationForm.l1extn" />
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>6</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+            
+            
+              <field property="l2contry" depends="maxlength">
+                    <arg key="UserRegistrationForm.l2contry" />
+                     <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>4</var-value></var>
+                    
+            </field>
+                
+            <field property="l2area" depends="mask,maxlength">
+                    <arg key="UserRegistrationForm.l2area" />
+                     <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>6</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>                    
+        			
+            </field>
+            <field property="l2phnum" depends="mask,maxlength">
+                    <arg key="UserRegistrationForm.l2phnum" />
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>13</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+             <field property="l2extn" depends="mask,maxlength">
+                    <arg key="UserRegistrationForm.l2extn" />
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>6</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+             <field property="l3contry" depends="maxlength">
+                    <arg key="UserRegistrationForm.l3contry" />
+                     <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>4</var-value></var>
+                   
+            </field>
+            
+            <field property="l3area" depends="mask,maxlength">
+                    <arg key="UserRegistrationForm.l3area" />
+                     <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>6</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>                    
+        			
+            </field>
+            <field property="l3phnum" depends="mask,maxlength">
+                    <arg key="UserRegistrationForm.l3phnum" />
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>13</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+              <field property="l3extn" depends="mask,maxlength">
+                    <arg key="UserRegistrationForm.l3extn" />
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>6</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+            
+             <field property="f1contry" depends="maxlength">
+                    <arg key="UserRegistrationForm.f1contry" />
+                     <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>4</var-value></var>
+                    
+            </field>
+            
+             
+            <field property="f1area" depends="mask,maxlength">
+                    <arg key="UserRegistrationForm.faxNumber" />
+                     <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>6</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>                    
+        			
+            </field>
+            <field property="f1phnum" depends="mask,maxlength">
+                    <arg key="UserRegistrationForm.f1phnum" />
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>13</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+              <field property="f1extn" depends="mask,maxlength">
+                    <arg key="UserRegistrationForm.f1extn" />
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>6</var-value></var>
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+			<field property="mobileNumber" depends="required,mask,minlength,maxlength">
+                    <arg key="UserRegistrationForm.mobileNumber" />
+                    <arg position="1" name="minlength" key="${var:minlength}" resource="false"/>
+                    <var><var-name>minlength</var-name><var-value>12</var-value></var>
+                     <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var><var-name>maxlength</var-name><var-value>12</var-value></var>                    
+        			<var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+            </field>
+             <field property="city" depends="required,mask">
+                    <arg key="UserRegistrationForm.city" />
+                    <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[a-zA-Z]*$</var-value>
+                    </var>
+            </field>
+             <field property="zip" depends="required,mask,minlength,maxlength">
+                    <arg key="UserRegistrationForm.zip" />
+                     <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]*$</var-value>
+                    </var>
+                    <arg position="1" name="minlength" key="${var:minlength}" resource="false"/>
+                    <var><var-name>minlength</var-name><var-value>6</var-value></var>
+                    <arg position="1" name="maxlength" key="${var:maxlength}" resource="false"/>
+        			<var><var-name>maxlength</var-name><var-value>6</var-value></var>
+            </field>
+             
+			
+		</form>
+		<form name="iCATTermsAndConditionsMasterForm">
+			<field property="tcTitle" depends="required">
+				<arg key="ERROR.ICATTermsAndConditionsMaster.TCTITLE" />
+			</field>
+			<field property="termsConditionText" depends="required,maxlength">
+				<arg key="ERROR.ICATTermsAndConditionsMaster.termsConditionText" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>15000</var-value>
+				</var>
+			</field>
+			<field property="description" depends="maxlength">
+				<arg key="ERROR.ICATTermsAndConditionsMaster.description" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+			<field property="remark" depends="maxlength">
+				<arg key="ERROR.ICATTermsAndConditionsMaster.remark" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+		</form>
+
+
+		<form name="iCATDisclaimerMasterForm">
+			<field property="title" depends="required">
+				<arg key="ERROR.ICATDisclaimerMaster.title" />
+			</field>
+			<field property="disclaimerText" depends="required,maxlength">
+				<arg key="ERROR.ICATDisclaimerMaster.disclaimerText" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>2000</var-value>
+				</var>
+			</field>
+			<field property="description" depends="maxlength">
+				<arg key="ERROR.ICATDisclaimerMaster.description" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+			<field property="remark" depends="maxlength">
+				<arg key="ERROR.ICATDisclaimerMaster.remark" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+		</form>
+		<form name="iCATSERVICECATEGORYForm">
+			<field property="NAME" depends="required">
+				<arg key="ERROR.ICATSERVICECATEGORY.NAME" />
+			</field>
+			<field property="shortName" depends="required">
+				<arg key="ERROR.ICATSERVICECATEGORY.SHORTNAME" />
+			</field>
+			<field property="DESCRIPTION" depends="maxlength">
+				<arg key="ERROR.DESCRIPTION" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+			<field property="REMARK" depends="maxlength">
+				<arg key="ERROR.REMARK" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+		</form>
+		<form name="iCATLIMITMASTERForm">
+			<field property="LIMITNAME" depends="required">
+				<arg key="ERROR.ICATLIMITMASTER.LIMITNAME" />
+			</field>
+			<field property="LIMITCODE" depends="required">
+				<arg key="ERROR.ICATLIMITMASTER.LIMITCODE" />
+			</field>
+			<field property="STANDARDVALUE" depends="required">
+				<arg key="ERROR.ICATLIMITMASTER.STANDARDVALUE" />
+			</field>
+			<field property="NOTIFIEDBY" depends="required,validwhen">
+				<arg key="ERROR.ICATLIMITMASTER.NOTIFIEDBY" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>((iCATLIMITMASTERForm.NOTIFIEDBY == 0) or (*this* != 0))</var-value>
+				</var>
+			</field>
+			<field property="FUELTYPESID" depends="required,validwhen">
+				<arg key="ERROR.ICATLIMITMASTER.FUELTYPEID" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>((iCATLIMITMASTERForm.FUELTYPESID == 0) or (*this* != 0))</var-value>
+				</var>			
+			</field>
+			<field property="DESCRIPTION" depends="maxlength">
+				<arg key="ERROR.DESCRIPTION" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+			<field property="REMARK" depends="maxlength">
+				<arg key="ERROR.REMARK" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+		</form>
+	    <form name="iCATTESTMASTERForm">
+	      <field property="TESTNAME" depends="required">
+	        <arg0 key="ERROR.ICATTESTMASTER.TESTNAME"/>
+	      </field>
+	      <field property="TESTCODE" depends="required">
+	        <arg0 key="ERROR.ICATTESTMASTER.TESTCODE"/>
+	      </field>
+	      <field property="DEPARTMENTID" depends="required,validwhen">
+	        <arg0 key="ERROR.ICATTESTMASTER.DEPARTMENTID"/>
+	        <var>
+					<var-name>test</var-name>
+					<var-value>((iCATTESTMASTERForm.DEPARTMENTID == 0) or (*this* != 0))</var-value>
+				</var>
+	      </field>
+	      <field property="STDREGULATIONID" depends="required,validwhen">
+	        <arg0 key="ERROR.ICATTESTMASTER.STANDARDANDREGULATION"/>
+	        <var>
+					<var-name>test</var-name>
+					<var-value>((iCATTESTMASTERForm.STDREGULATIONID == 0) or (*this* != 0))</var-value>
+				</var>
+	      </field>     
+	    </form>
+	    <form name="iCATOTHERCHARGESForm">
+	      <field property="CHARGECATEGORY" depends="required">
+	        <arg0 key="ERROR.ICATOTHERCHARGES.CHARGECATEGORY"/> 
+	      </field>
+	            
+	      <field property="CHARGEVALUE" depends="float,required,floatRange">
+				<arg position="0" key="ERROR.ICATOTHERCHARGES.CHARGEVALUE" />
+				<arg position="1" name="floatRange" key="${var:min}" resource="false" />
+				<arg position="2" name="floatRange" key="${var:max}" resource="false" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0.0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>100.0</var-value>
+				</var>
+			</field>
+	    </form>	 
+	    <!-- Change by vrushali to validate rulename, remark and description --> 
+    <form name="iCATCMVRRULESForm">
+      <field property="RULENAME" depends="required,maxlength">
+        <arg0 key="ERROR.ICATCMVRRULES.RULENAME"/>
+        <arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>150</var-value>
+				</var>
+      </field>
+      <field property="RULENO" depends="required">
+        <arg0 key="ERROR.ICATCMVRRULES.RULENO"/>
+      </field>
+      <field property="DESCRIPTION" depends="maxlength">
+        <arg0 key="ERROR.ICATCMVRRULES.DESCRIPTION"/>
+        <arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+      </field>
+      <field property="REMARK" depends="maxlength">
+        <arg0 key="ERROR.ICATCMVRRULES.REMARK"/>
+        <arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>4000</var-value>
+				</var>
+      </field>
+      <!-- eND cHANGE -->
+      <field property="RULENO" depends="required">
+        <arg0 key="ERROR.ICATCMVRRULES.RULENO"/>
+      </field>
+    </form>	      
+    
+    <form name="iCATHOLOGRAMMASTERForm">      
+      <field property="DEPARTMENTID" depends="required,validwhen">
+        <arg0 key="ERROR.ICATHOLOGRAMSERISMASTER.DEPARTMENTID"/>
+        <var>
+					<var-name>test</var-name>
+					<var-value>((iCATHOLOGRAMMASTERForm.DEPARTMENTID == 0) or (*this* != 0))</var-value>
+				</var>
+      </field>
+      <field property="YEAR" depends="required,validwhen">
+        <arg0 key="ERROR.ICATHOLOGRAMSERIESMASTER.YEAR"/>
+        <var>
+					<var-name>test</var-name>
+					<var-value>((iCATHOLOGRAMMASTERForm.YEAR == 0) or (*this* != 0))</var-value>
+				</var>
+      </field>
+      <field property="SERIESFROM" depends="required,maxLength">
+        <arg0 key="ERROR.ICATHOLOGRAMSERIESMASTER.SERIESFROM"/>
+      </field>
+      <field property="SERIESTO" depends="required,maxLength">
+        <arg0 key="ERROR.ICATHOLOGRAMSERIESMASTER.SERIESTO"/>
+      </field>
+     <field property="EFFECTIVEDATE" depends="required">
+     	 <arg0 key="ERROR.ICATHOLOGRAMSEIRESMASTER.EFFECTIVEDATE"/>
+     </field>
+    </form>
+    <!-- Start :: Added By MeghaT for Engine Master -->
+
+		<!-- Start :: Engine Master-->
+		<form name="iCATENGINEMASTERForm">
+			<field property="ENGINETYPE" depends="required">
+				<arg key="ERROR.ICATENGINEMASTER.ENGINETYPE" />
+			</field>
+			<field property="ENGINETYPECODE" depends="required">
+				<arg key="ERROR.ICATENGINEMASTER.ENGINETYPECODE" />
+			</field>
+			<field property="ENGINEAPPTYPEID" depends="required,validwhen">
+				<arg key="ERROR.ICATENGINEMASTER.ENGINEAPPTYPEID" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>((iCATENGINEMASTERForm.ENGINEAPPTYPEID == 0) or (*this* != 0))</var-value>
+				</var>
+			</field>
+			<field property="ENGINEPOWERID" depends="required,validwhen">
+				<arg0 key="ERROR.ICATENGINEMASTER.ENGINEPOWERID" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>((iCATENGINEMASTERForm.ENGINEPOWERID == 0) or (*this* != 0))</var-value>
+				</var>
+			</field>
+
+			<field property="DEMURRAGEAMOUNT" depends="floatRange">
+				<arg position="0" key="ERROR.ICATENGINEMASTER.DEMURRAGEAMOUNT" />
+				<arg position="1" name="floatRange" key="${var:min}" resource="false" />
+				<arg position="2" name="floatRange" key="${var:max}" resource="false" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0.0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>10000000.0</var-value>
+				</var>
+
+			</field>
+			<field property="REMARK" depends="maxlength">
+				<arg key="ERROR.REMARK" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+		</form>
+		<!-- End :: Engine Master-->
+
+		<!-- Start :: Engine Application Master-->
+		<form name="iCATENGINEAPPTYPEForm">
+			<field property="ENGINEAPPTYPE" depends="required">
+				<arg key="ERROR.ICATENGINEAPPTYPE.ENGINEAPPTYPE" />
+			</field>
+			<field property="ENGINEAPPTYPE" depends="required">
+				<arg key="ERROR.ICATENGINEAPPTYPE.ENGINEAPPTYPECODE" />
+			</field>
+		</form>
+		<!-- End :: Engine Application Master-->
+
+
+		<!-- Start :: Engine Power Master-->
+		<form name="iCATENGINEPOWERForm">
+			<field property="ENGINEPOWERTITLE" depends="required">
+				<arg key="ERROR.ICATENGINEPOWERTYPE.ENGINEPOWERTITLE" />
+			</field>
+			<field property="ENGINEPOWERCODE" depends="required">
+				<arg key="ERROR.ICATENGINEPOWERTYPE.ENGINEPOWERCODE" />
+			</field>
+		</form>
+		<!-- End :: Engine Power Master-->
+
+		<!-- End :: Added By MeghaT for Engine Master  -->
+
+		<!-- Start :: Added By MeghaT Vehicle Master-->
+
+		<!-- Start :: Vehicle Master-->
+		<form name="iCATVEHICLEMASTERForm">
+			<field property="VEHICLETYPE" depends="required">
+				<arg key="ERROR.ICATVEHICLEMASTER.VEHICLETYPE" />
+			</field>
+			<field property="VEHICLETYPECODE" depends="required">
+				<arg key="ERROR.ICATVEHICLEMASTER.VEHICLETYPECODE" />
+			</field>
+			<field property="VEHICLEFUELTYPEID" depends="required,validwhen">
+				<arg key="ERROR.ICATVEHICLEMASTER.VEHICLEFUELTYPEID" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>((iCATVEHICLEMASTERForm.VEHICLEFUELTYPEID == 0) or (*this* != 0))</var-value>
+				</var>
+			</field>
+			<field property="ENGINEPOWERID" depends="required,validwhen">
+				<arg key="ERROR.ICATVEHICLEMASTER.VEHICLETYPE" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>((iCATVEHICLEMASTERForm.ENGINEPOWERID ==0) or (*this* != 0))</var-value>
+				</var>
+			</field>
+			<field property="EMISSIONSTANDARDID" depends="required,validwhen">
+				<arg key="ERROR.ICATVEHICLEMASTER.EMISSIONSTANDARDID" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>((iCATVEHICLEMASTERForm.EMISSIONSTANDARDID == 0)or (*this* != 0))</var-value>
+				</var>
+			</field>
+
+			<field property="DEMURRAGEAMOUNT" depends="floatRange">
+				<arg position="0" key="ERROR.ICATVEHICLEMASTER.DEMURRAGEAMOUNT" />
+				<arg position="1" name="floatRange" key="${var:min}" resource="false" />
+				<arg position="2" name="floatRange" key="${var:max}" resource="false" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0.0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>10000000.0</var-value>
+				</var>
+
+			</field>
+			<field property="REMARK" depends="maxlength">
+				<arg key="ERROR.REMARK" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+		</form>
+
+		<!-- End :: Vehicle Master -->
+
+		<!-- Start :: Vehicle Fuel Type -->
+		<form name="iCATVEHICLEFUELForm">
+			<field property="VEHICLEFUELTYPE" depends="required">
+				<arg key="ERROR.ICATVEHICLEFUEL.VEHICLEFUELTYPE" />
+			</field>
+			<field property="FUELTYPECODE" depends="required">
+				<arg key="ERROR.ICATVEHICLEFUEL.FUELTYPECODE" />
+			</field>
+		</form>
+		<!-- End ::  Vehicle Fuel Type -->
+
+		<!-- Start :: Engine Power Master-->
+		<form name="iCATVEHICLEPOWERForm">
+			<field property="ENGINEPOWERTITLE" depends="required">
+				<arg key="ERROR.ICATVEHICLEPOWER.ENGINEPOWERTITLE" />
+			</field>
+			<field property="ENGINEPOWERCODE" depends="required">
+				<arg key="ERROR.ICATVEHICLEPOWER.ENGINEPOWERCODE" />
+			</field>
+		</form>
+		<!-- End :: Engine Power Master-->
+
+		<!-- Start :: Emission Standard -->
+		<form name="iCATVEHICLEEMISSIONForm">
+			<field property="EMISSIONSTANDARD" depends="required">
+				<arg key="ERROR.ICATVEHICLEEMISSION.EMISSIONSTANDARD" />
+			</field>
+			<field property="EMISSIONSTANDARDCODE" depends="required">
+				<arg key="ERROR.ICATVEHICLEEMISSION.EMISSIONSTANDARDCODE" />
+			</field>
+		</form>
+		<!-- End :: Emission Standard -->
+
+		<!-- End :: Added By MeghaT Vehicle Master-->
+
+		<!-- Start :: Added By MeghaT Component Master-->
+
+		<form name="iCATCOMPONENTMASTERForm">
+			<field property="COMPONENTNAME" depends="required, maxlength">
+				<arg key="ERROR.ICATCOMPONENTMASTER.COMPONENTNAME" />
+				<!-- Start change poonam for comp name validation -->
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+			<field property="FULLTESTINGSAMPLES" depends="required,validwhen">
+				<arg key="ERROR.ICATCOMPONENTMASTER.FULLTESTINGSAMPLES" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>((iCATCOMPONENTMASTERForm.FULLTESTINGSAMPLES == 0) or (*this* != 0))</var-value>
+				</var>
+			</field>
+			<field property="EXTTESTSAMPLES" depends="required,validwhen">
+				<arg key="ERROR.ICATCOMPONENTMASTER.EXTTESTSAMPLES" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>((iCATCOMPONENTMASTERForm.EXTTESTSAMPLES == 0) or (*this* != 0))</var-value>
+				</var>
+			</field>
+			<field property="SERIALNUMBER" depends="required">
+				<arg key="ERROR.ICATCOMPONENTMASTER.SERIALNUMBER" />
+			</field>
+			<field property="ISCOPAPPLICABLE" depends="required">
+				<arg key="ERROR.ICATCOMPONENTMASTER.ISCOPAPPLICABLE" />
+			</field>
+			<field property="LIMITID" depends="required">
+				<arg key="ERROR.ICATCOMPONENTMASTER.LIMITID" />
+			</field>
+			<field property="REFERENCESTDID" depends="required">
+				<arg key="ERROR.ICATCOMPONENTMASTER.REFERENCESTD" />
+			</field>	
+			<field property="DEMURRAGEAMOUNT" depends="floatRange">
+				<arg position="0" key="ERROR.ICATCOMPONENTMASTER.DEMURRAGEAMOUNT" />
+				<arg position="1" name="floatRange" key="${var:min}" resource="false" />
+				<arg position="2" name="floatRange" key="${var:max}" resource="false" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0.0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>10000000.0</var-value>
+				</var>
+
+			</field>
+			<field property="REMARK" depends="maxlength">
+				<arg key="ERROR.REMARK" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+				<!-- Start change poonam for remark validation -->
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+		</form>
+		<!-- End :: Added By MeghaT Component Master-->
+
+		<form name="iCATREFERENCESTDMASTERForm">
+			<field property="REFERENCESTDNAME" depends="required">
+				<arg key="ERROR.ICATREFERENCESTDMASTER.REFERENCESTDNAME" />
+			</field>
+		<field property="REFERENCESTDDESCRIPTION" depends="required">
+		<arg key="ERROR.ICATREFERENCESTDMASTER.REFERENCESTDDESCRITPTION" />
+			</field>
+
+			
+			</form>
+		<!-- Start :: Added By MeghaT Help Master-->
+
+		<form name="iCATHELPMASTERForm">
+			<field property="TITLE" depends="required">
+				<arg key="ERROR.ICATHELPMASTER.TITLE" />
+			</field>
+			<field property="HELPTEXT" depends="required,maxlength">
+				<arg key="ERROR.ICATHELPMASTER.HELPTEXT" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>500</var-value>
+				</var>
+			</field>
+			
+			<field property="SCREENNAME" depends="required">
+				<arg key="ERROR.ICATHELPMASTER.SCREENNAME" />
+			</field>
+			<field property="DESCRIPTION" depends="maxlength">
+				<arg key="ERROR.ICATHELPMASTER.DESCRIPTION" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>500</var-value>
+				</var>
+			</field>
+
+			<field property="REMARK" depends="maxlength">
+				<arg key="ERROR.REMARK" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+		</form>
+		<!-- End :: Added By MeghaT Help Master-->
+
+		<!-- Start :: Added By MeghaT MENU Master-->
+
+		<form name="iCATMENUMASTERForm">
+			<field property="NAME" depends="required">
+				<arg key="ERROR.ICATMENUMASTER.NAME" />
+			</field>
+			<field property="APPLICABLEROLES" depends="required">
+				<arg key="ERROR.ICATMENUMASTER.APPLICABLEROLES" />
+			</field>
+			
+			<field property="REFACTION" depends="required,maxlength">
+				<arg key="ERROR.ICATMENUMASTER.REFACTION" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+			<field property="DESCRIPTION" depends="maxlength">
+				<arg key="ERROR.ICATMENUMASTER.DESCRIPTION" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>500</var-value>
+				</var>
+			</field>
+
+			<field property="REMARK" depends="maxlength">
+				<arg key="ERROR.REMARK" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+		</form>
+		<!-- End :: Added By MeghaT MENU Master-->
+		
+		<!-- Start :: Added By MeghaT STDREG Maste -->
+
+		<form name="iCATSTDREGMASTERForm">
+			<!--<field property="STANDARDANDREGULATION" depends="required ">
+				<arg key="ERROR.ICATSTDREGMASTER.STANDARDANDREGULATION" />
+			</field>
+		
+			<field property="STDREGULATIONTYPE" depends="required">
+				<arg key="ERROR.ICATSTDREGMASTER.STDREGULATIONTYPE" />
+			</field> -->
+			
+			 <!--<field property="fileIDName" depends="required,validwhen">
+				<arg key="ERROR.ICATSTDREGMASTER.STDREGULATIONFILE" /> 
+				<var>
+					<var-name>test</var-name>
+					<var-value>((iCATSTDREGMASTERForm.fileIDName == null) or (*this* != null))</var-value>
+				</var>
+				
+			</field>
+						
+			<field property="SERVICETESTTYPEID" depends="required,validwhen">
+				<arg key="ERROR.ICATSTDREGMASTER.SERVICETESTTYPEID" />			
+				<var>
+					<var-name>test</var-name>
+					<var-value>((iCATSTDREGMASTERForm.SERVICETESTTYPEID == 0) or (*this* != 0))</var-value>
+				</var>
+			</field>  -->
+						
+			<!-- <field property="APPLICABLETO" depends="required ">
+				<arg key="ERROR.ICATSTDREGMASTER.APPLICABLETO" /> 
+			</field> -->
+			
+			<field property="DESCRIPTION" depends="maxlength">
+				<arg key="ERROR.ICATSTDREGMASTER.DESCRIPTION" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>500</var-value>
+				</var>
+			</field>
+			
+			<field property="REMARK" depends="maxlength">
+				<arg key="ERROR.REMARK" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+		</form>
+		<!-- End :: Added By MeghaT STDREG Master-->	
+		
+		<!-- Start :: Added By MeghaT CUSTOMER Master--> 
+
+		<form name="iCATCUSTOMERMASTERForm">
+			<field property="DESCRIPTION" depends="maxlength">
+				<arg key="ERROR.ICATCUSTOMERMASTER.DESCRIPTION" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+			<field property="REMARK" depends="maxlength">
+				<arg key="ERROR.REMARK" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>1000</var-value>
+				</var>
+			</field>
+			<!-- on date 24-06-2011 added by  Poonam  for short name -->	
+
+			<field property="SHORTNAME" depends="mask">
+				<!-- <arg key="iCATCUSTOMERMASTERForm.shortname" /> -->
+				<arg key="ERROR.ICATCUSTOMERMASTER.SHORTNAME" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z]*$</var-value>
+				</var>
+			</field>	 
+			
+<!-- End change of short name -->		
+		</form>
+		<!-- End :: Added By MeghaT CUSTOMER Master-->
+		
+		<!-- Start :: Added By MeghaT DEPARTMENT ROLE LEVEL Masters -->
+
+		<form name="iCATDEPTROLELEVELMASTERForm">
+		
+			<field property="departmentId" depends="required,validwhen">
+				<arg key="ERROR.ICATDEPTROLELEVELMASTER.departmentId" />			
+				<var>
+					<var-name>test</var-name>
+					<var-value>((iCATDEPTROLELEVELMASTERForm.departmentId == 0) or (*this* != 0))</var-value>
+				</var>
+			</field> 
+			<field property="roleId" depends="required,validwhen">
+				<arg key="ERROR.ICATDEPTROLELEVELMASTER.roleId" />			
+				<var>
+					<var-name>test</var-name>
+					<var-value>((iCATDEPTROLELEVELMASTERForm.roleId == 0) or (*this* != 0))</var-value>
+				</var>
+			</field> 
+			<field property="level" depends="required,validwhen">
+				<arg key="ERROR.ICATDEPTROLELEVELMASTER.level" />			
+				<var>
+					<var-name>test</var-name>
+					<var-value>((iCATDEPTROLELEVELMASTERForm.level == 0) or (*this* != 0))</var-value>
+				</var>
+			</field> 
+			
+			<field property="REMARK" depends="maxlength">
+				<arg key="ERROR.REMARK" />
+				<arg position="1" name="maxlength" key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>1000</var-value>
+				</var>
+			</field>
+		</form>
+			<!-- End :: Added By MeghaT DEPARTMENT ROLE LEVEL Masters -->
+    
+  </formset>
+</form-validation>

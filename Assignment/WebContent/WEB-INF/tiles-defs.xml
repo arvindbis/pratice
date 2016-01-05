@@ -1,0 +1,1930 @@
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://struts.apache.org/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+	<definition name="doc.mainLayout" path="/apps/icat/common/layout.jsp">
+		<put name="title" value="Title" />
+		<put name="header" value="/apps/icat/common/header.jsp" />
+		<put name="menu" value="/apps/icat/common/menu.jsp" />
+		<put name="footer" value="/apps/icat/common/footer.jsp" />
+		<put name="body" value="/jsp/default.jsp" />
+		<!-- <put name="body"   value="/template/main.jsp"/> -->
+	</definition>
+	<definition name="doc.blankLayout" path="/apps/icat/common/layout.jsp">
+		<put name="title" value="Title" />
+		<put name="header" value="/apps/icat/common/header.jsp" />
+		<put name="menu" value="/apps/icat/common/menu1.jsp" />
+		<put name="footer" value="/apps/icat/common/footer.jsp" />
+		<put name="body" value="/jsp/default.jsp" />
+		<!-- <put name="body"   value="/template/main.jsp"/> -->
+	</definition>
+	
+	<definition name="BeforeUploadPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/UploadAcctStmt/BeforeUploadCustAcctStmt.jsp" />
+	</definition>
+	<definition name="GoToUploadPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/UploadAcctStmt/UploadCustAcctStmt.jsp" />
+	</definition>
+	<definition name="ViewUploadPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/UploadAcctStmt/viewCustAcctStmt.jsp" />
+	</definition>
+	<!-- <forward name="BeforeUpload" path="BeforeUploadPath" path="/jsp/UploadAcctStmt/BeforeUploadCustAcctStmt.jsp" />
+			<forward name="GoToUpload" path="GoToUploadPath" path="/jsp/UploadAcctStmt/UploadCustAcctStmt.jsp" />
+			<forward name="ViewUpload" path="ViewUploadPath" path="/jsp/UploadAcctStmt/viewCustAcctStmt.jsp" />-->
+
+	<definition name="CorrigendumReportApprovePath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/corrigendum/corrigendumReportApprove.jsp" />
+	</definition>
+	<definition name="CorrigendumReportCorrectPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/corrigendum/corrigendumReportCorrection.jsp" />
+	</definition>
+	<definition name="CorrigendumCorrectPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/corrigendum/corrigendumCorrection.jsp" />
+	</definition>
+	<definition name="CorrigendumCatterPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/corrigendum/corrigendumCatter.jsp" />
+	</definition>
+	<definition name="CorrigendumPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/corrigendum/corrigendum.jsp" />
+	</definition>
+	<definition name="clearanceSubmitPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/clearenceReport.jsp" />
+	</definition>
+	<definition name="changePassSuccessPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/PassChangeSuccess.jsp" />
+	</definition>
+	<definition name="clearanceSubmitPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/clearenceReport.jsp" />
+	</definition>
+	<definition name="clearanceApprovePath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/clearenceReportApproveReject.jsp" />
+	</definition>
+	<definition name="correctReportPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/reportCorrection.jsp" />
+	</definition>
+
+	<definition name="logSheetApprovePath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/reportApprove.jsp" />
+	</definition>
+	
+	<definition name="viewinterimcscpath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/interimReportApprove.jsp" />
+	</definition>
+	
+	<definition name="interimcscpath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/interimcscenable.jsp" />
+	</definition>
+	<definition name="forgotPassPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ForgotPassword.jsp" />
+	</definition>
+
+	<definition name="confirmPassAnsPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/PasswordVerification.jsp" />
+	</definition>
+
+	<definition name="queryPagePath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/QueriesScreen.jsp" />
+	</definition>
+
+	<definition name="changePassPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ChangePassword.jsp" />
+	</definition>
+	
+	<definition name="changePassPage" extends="doc.blankLayout">
+		<put name="body" value="/jsp/ChangePassword.jsp" />
+	</definition>
+
+	<definition name="changePassSuccessPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/PassChangeSuccess.jsp" />
+	</definition>
+
+	<definition name="contactUsPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ContactUs.jsp" />
+	</definition>
+
+	<definition name="AISFormLinksPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ais007/AISLinksPage.jsp" />
+	</definition>
+
+	<definition name="AISCorrFormLinksPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ais007/AISCorrLinksPage.jsp" />
+	</definition>
+
+	<definition name="AISFormPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ais007/AISForm.jsp" />
+	</definition>
+
+	<definition name="AISFileUploadPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ais007/AISFileUpload.jsp" />
+	</definition>
+
+	<definition name="AISFormSuccessPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ais007/AISFormSubmit.jsp" />
+	</definition>
+
+	<definition name="ErrorPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ErrorPage.jsp" />
+	</definition>
+
+	<definition name="AcknowledgeInvoicePath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/AcknowledgeInvoice.jsp" />
+	</definition>
+
+	<definition name="LCProcessingPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/lcProcessing/lcProcessing.jsp" />
+	</definition>
+
+	<definition name="SubmitPaymentPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/payment/SubmitPayment.jsp" />
+	</definition>
+
+	<definition name="SuccessPaymentPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/payment/SuccessPayment.jsp" />
+	</definition>
+
+	<definition name="PaymentListPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/payment/InvoiceList.jsp" />
+	</definition>
+
+	<definition name="PaymentVerificationPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/payment/PaymentVerify.jsp" />
+	</definition>
+
+	<definition name="AcknowledgePaymentPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/payment/acknowledgePayment.jsp" />
+	</definition>
+
+	<definition name="UploadDocumentPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/uploadDocument/UploadDocument.jsp" />
+	</definition>
+
+	<definition name="customerRegistrationPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/CustomerRegistration.jsp" />
+	</definition>
+
+	<definition name="confirmCustomerPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ConfirmCustomerRegistration.jsp" />
+	</definition>
+
+	<definition name="backEditCustomerPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/CustomerRegistration.jsp" />
+	</definition>
+
+	<definition name="successCustomerRegistrationPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/SuccessRegistrationPage.jsp" />
+	</definition>
+
+	<definition name="selectCustomerPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/EditSelectCustomer.jsp" />
+	</definition>
+
+	<definition name="editCustomerPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/EditCustomerPage.jsp" />
+	</definition>
+
+	<definition name="successUpdateCustomerPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/EditSuccessCustomerPage.jsp" />
+	</definition>
+
+	<definition name="selectUserPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/EditSelectUser.jsp" />
+	</definition>
+
+	<definition name="userRegistrationPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/UserRegistration.jsp" />
+	</definition>
+
+	<definition name="secUserRegistrationPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/NewUserRegistration.jsp" />
+	</definition>
+
+	<definition name="confirmUserPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ConfirmUserRegistration.jsp" />
+	</definition>
+
+	<definition name="backEditUserPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/UserRegistration.jsp" />
+	</definition>
+
+	<definition name="successUserRegistrationPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/SuccessUserRegistration.jsp" />
+	</definition>
+
+	<definition name="editUserPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/EditUserPage.jsp" />
+	</definition>
+
+	<definition name="successUpdateUserPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/EditSuccessUserPage.jsp" />
+	</definition>
+
+	<definition name="GetUserList" extends="doc.mainLayout">
+		<put name="body" value="/jsp/GETUserList.jsp" />
+	</definition>
+
+	<definition name="HomePath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/HomePage.jsp" />
+	</definition>
+	
+	<!--START CODE CHR#515 PRINTTING STAMP-->
+	
+	<definition name="StampPath" extends="doc.mainLayout">
+		<put name="body" value="/stamp/stamppage.jsp" />
+	</definition>
+	
+	<!--END CODE CHR#515 PRINTTING STAMP-->
+	
+	<definition name="OfflineSuccessPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/offlinesuccess.jsp" />
+	</definition>
+	 <!--DEF 401 RELEASE 34 Modified by Muktaram C.-->
+	<definition name="FailurePath" extends="doc.blankLayout">
+		<put name="body" value="/jsp/FailurePage.jsp" />
+	</definition>
+	
+	<definition name="PasswordChgPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/PasswordChangePage.jsp" />
+	</definition>
+	
+	<definition name="cscengghomePath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/CSCEnggHome.jsp" />
+	</definition>
+
+	<definition name="hodHomePath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/CSCHodHome.jsp" />
+	</definition>
+
+	<definition name="CaseRegPagePath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/CaseRegistration.jsp" />
+	</definition>
+
+	<definition name="ProcessPagePath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ProcessPage.jsp" />
+	</definition>
+
+	<definition name="TaskListHomePath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/displaytasklist.jsp" />
+	</definition>
+
+	<definition name="AssignEngineerHomePath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/assignengineer.jsp" />
+	</definition>
+
+	<definition name="AssignSectionEngHomePath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/assignSectionEng.jsp" />
+	</definition>
+
+	<definition name="AssignCSCEngineerHomePath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/hodAssignCSCEngineer.jsp" />
+	</definition>
+
+	<definition name="AssignUserHomePath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/assignuser.jsp" />
+	</definition>
+
+	<definition name="VerifyCaseHomePath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/verifycase.jsp" />
+	</definition>
+
+	<definition name="InterimCertRequestPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/verifyinterimcertreq.jsp" />
+	</definition>
+
+	<definition name="SelectTestHomePath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/testselection/selecttest.jsp" />
+	</definition>
+
+	<definition name="ShowRechristeningPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/RechristeningPage.jsp" />
+	</definition>
+
+	<definition name="ShowRechSuccessPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/RechSuccessPage.jsp" />
+	</definition>
+
+	<definition name="UploadSpecificationPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/UploadSpecification.jsp" />
+	</definition>
+	<definition name="UploadIcatOnlineSpecPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/UploadIcatOnlineSpec.jsp" />
+	</definition>
+	<definition name="UploadIcatOfflineSpecPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/UploadIcatOfflineSpec.jsp" />
+	</definition>
+
+	<definition name="ShowRechConfirmPagePath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/RechConfirmPage.jsp" />
+	</definition>
+
+	<definition name="ShowExtensionPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ExtensionPage.jsp" />
+	</definition>
+	<definition name="ShowExtensionConfirmPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ConfirmExtensionPage.jsp" />
+	</definition>
+
+	<definition name="ShowNewModelPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/NewModelPage.jsp" />
+	</definition>
+	<definition name="ShowModelConfirmPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/NewModelConfirmPage.jsp" />
+	</definition>
+
+	<definition name="ShowCOPPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/COPPage.jsp" />
+	</definition>
+
+	<definition name="ShowCOPNextPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/COPNextPage.jsp" />
+	</definition>
+
+	<definition name="ShowCOPConfirmPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/COPConfirmPage.jsp" />
+	</definition>
+
+	<definition name="ShowDevelopmentPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/DevelopmentPage.jsp" />
+	</definition>
+
+	<definition name="ShowDevConfirmPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/DevelopmentConfirmPage.jsp" />
+	</definition>
+
+	<definition name="ShowProjectPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ProjectPage.jsp" />
+	</definition>
+
+	<definition name="ShowProjectConfirmPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ProjectConfirmPage.jsp" />
+	</definition>
+
+	<definition name="ShowUploadDocPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/UploadDocument.jsp" />
+	</definition>
+
+	<definition name="ApproveRejectHomePath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/performapprovereject.jsp" />
+	</definition>
+
+	<definition name="SelectDepartMentHomePath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/testselection/selectdepartment.jsp" />
+	</definition>
+
+	<definition name="error.page" extends="doc.mainLayout">
+		<put name="title" value="Error" />
+		<put name="body" value="/failure.jsp" />
+	</definition>
+
+	<definition name="ShowPropSubPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/PropertySubmissionPage.jsp" />
+	</definition>
+	<definition name="internalpropertysubmitpage" extends="doc.mainLayout">
+		<put name="body" value="/jsp/internalpropertysubmitpage.jsp" />
+	</definition>
+
+	<definition name="ShowHomePage" extends="doc.mainLayout">
+		<put name="body" value="/jsp/teststartandend.jsp" />
+	</definition>
+
+	<definition name="requestDocketInfo" extends="doc.mainLayout">
+		<put name="body" value="/jsp/interimcertificaterequest.jsp" />
+	</definition>
+
+	<definition name="CSCEnggView" extends="doc.mainLayout">
+		<put name="body" value="/jsp/interimcertificaterequest.jsp" />
+	</definition>
+
+	<definition name="SEVerifyBeforeTestPage" extends="doc.mainLayout">
+		<put name="body" value="/jsp/secenggverifybeforetest.jsp" />
+	</definition>
+	
+	<!--START CODE REL #44 CHR284 ADDED BY SHITAL B FOR BILLING OF EVENTS ON 6-JAN-14-->
+	<definition name="eventCustomerRegistrationPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/EventCustomerRegistration.jsp" />
+	</definition>
+
+	<!--<definition name="successEventCustomerRegistrationPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/SuccessEventRegistrationPage.jsp" />
+	</definition>
+	-->
+	<definition name="ViewNewCustomerRegistrationPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ViewNewCustomerRegistration.jsp" />
+	</definition>
+	
+	<definition name="ViewNewCustomerRegistrationSuccessPath" extends="doc.mainLayout">
+  		<put name="body" value="/jsp/EventCustomerDetails.jsp" /> 
+  	</definition>
+  	<!-- END -->
+  	<!-- START :CHR287 REL#44 ADDED BY SHITAL B. on 24-JAN-2014 AUTOMATIC COP SELECTION --> 
+	 <definition name="manager.ICATPROPERTYENGINEER.entry" extends="doc.mainLayout">
+  		<put name="body" value="/manager/ICATPROPERTYENGINEER/entry.jsp" /> 
+  	 </definition>
+ 	 <definition name="manager.ICATPROPERTYENGINEER.summary" extends="doc.mainLayout">
+  		<put name="body" value="/manager/ICATPROPERTYENGINEER/summary.jsp" /> 
+     </definition>
+    <!--  End  --> 
+	<!-- <<<<<<<<<<<<<< ICATDEPARTMENTMASTER >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATDEPARTMENTMASTER.entry"
+		extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATDEPARTMENTMASTER/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATDEPARTMENTMASTER.summary"
+		extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATDEPARTMENTMASTER/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATDEPARTMENTMASTER.view"
+		extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATDEPARTMENTMASTER/view.jsp" />
+	</definition>
+	<definition name="manager.ICATDEPARTMENTMASTER.remove"
+		extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATDEPARTMENTMASTER/remove.jsp" />
+	</definition>
+	<definition name="query.ICATDEPARTMENTMASTER.SearchByPK"
+		extends="doc.mainLayout">
+		<put name="body" value="/query/ICATDEPARTMENTMASTER/SearchByPK.jsp" />
+	</definition>
+	<!-- <<<<<<<<<<<<<< ICATDESIGNATIONS >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATDESIGNATIONS.entry" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATDESIGNATIONS/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATDESIGNATIONS.summary" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATDESIGNATIONS/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATDESIGNATIONS.view" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATDESIGNATIONS/view.jsp" />
+	</definition>
+	<definition name="manager.ICATDESIGNATIONS.remove" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATDESIGNATIONS/remove.jsp" />
+	</definition>
+	<definition name="query.ICATDESIGNATIONS.SearchByPK"
+		extends="doc.mainLayout">
+		<put name="body" value="/query/ICATDESIGNATIONS/SearchByPK.jsp" />
+	</definition>
+	<!-- <<<<<<<<<<<<<< ICATROLES >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATROLES.entry" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATROLES/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATROLES.summary" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATROLES/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATROLES.view" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATROLES/view.jsp" />
+	</definition>
+	<definition name="manager.ICATROLES.remove" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATROLES/remove.jsp" />
+	</definition>
+	<definition name="query.ICATROLES.SearchByPK" extends="doc.mainLayout">
+		<put name="body" value="/query/ICATROLES/SearchByPK.jsp" />
+	</definition>
+	<!-- <<<<<<<<<<<<<< ICATCUSTOMERTYPE >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATCUSTOMERTYPE.entry" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATCUSTOMERTYPE/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATCUSTOMERTYPE.summary" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATCUSTOMERTYPE/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATCUSTOMERTYPE.view" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATCUSTOMERTYPE/view.jsp" />
+	</definition>
+	<definition name="manager.ICATCUSTOMERTYPE.remove" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATCUSTOMERTYPE/remove.jsp" />
+	</definition>
+	<definition name="query.ICATCUSTOMERTYPE.SearchByPK"
+		extends="doc.mainLayout">
+		<put name="body" value="/query/ICATCUSTOMERTYPE/SearchByPK.jsp" />
+	</definition>
+	<!-- <<<<<<<<<<<<<< ICATTIERTYPE >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATTIERTYPE.entry" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATTIERTYPE/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATTIERTYPE.summary" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATTIERTYPE/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATTIERTYPE.view" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATTIERTYPE/view.jsp" />
+	</definition>
+	<definition name="manager.ICATTIERTYPE.remove" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATTIERTYPE/remove.jsp" />
+	</definition>
+	<definition name="query.ICATTIERTYPE.SearchByPK" extends="doc.mainLayout">
+		<put name="body" value="/query/ICATTIERTYPE/SearchByPK.jsp" />
+	</definition>
+	<!-- <<<<<<<<<<<<<< ICATTESTTYPE >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATTESTTYPE.entry" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATTESTTYPE/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATTESTTYPE.summary" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATTESTTYPE/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATTESTTYPE.view" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATTESTTYPE/view.jsp" />
+	</definition>
+	<definition name="manager.ICATTESTTYPE.remove" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATTESTTYPE/remove.jsp" />
+	</definition>
+	
+	<!--Start code: CHR541 Manage FAQ  -->
+	<!-- <<<<<<<<<<<<<< ICATFAQMASTER>>>>>>>>>>>>>>> -->
+	
+	<definition name="manager.ICATFAQMASTER.summary" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATFAQMASTER/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATFAQMASTER.entry" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATFAQMASTER/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATFAQMASTER.view" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATFAQMASTER/view.jsp" />
+	</definition>
+	
+	<definition name="manager.ICATFAQMASTER.faqview" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATFAQMASTER/faq.jsp" />
+	</definition>
+	
+	<!--End code: CHR541 Manage FAQ  -->
+	
+	<!-- <<<<<<<<<<<<<< ICATMACHINETOOLS >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATMACHINETOOLS.entry" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATMACHINETOOLS/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATMACHINETOOLS.summary" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATMACHINETOOLS/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATMACHINETOOLS.view" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATMACHINETOOLS/view.jsp" />
+	</definition>
+	<definition name="manager.ICATMACHINETOOLS.remove" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATMACHINETOOLS/remove.jsp" />
+	</definition>
+	<definition name="query.ICATMACHINETOOLS.SearchByPK"
+		extends="doc.mainLayout">
+		<put name="body" value="/query/ICATMACHINETOOLS/SearchByPK.jsp" />
+	</definition>
+
+	<!-- <<<<<<<<<<<<<< ICATUSERS >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATUSERS.entry" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATUSERS/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATUSERS.summary" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATUSERS/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATUSERS.view" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATUSERS/viewUser.jsp" />
+	</definition>
+	<definition name="manager.ICATUSERS.viewuser" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATUSERS/view.jsp" />
+	</definition>
+	<definition name="manager.ICATUSERS.remove" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATUSERS/remove.jsp" />
+	</definition>
+	<definition name="manager.ICATUSERS.departmentRoleSelection" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATUSERS/DepartmentRoleSelection.jsp" />
+	</definition>
+
+	<!-- <<<<<<<<<<<<<< ICATTermsAndConditionsMaster >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATTermsAndConditionsMaster.entry"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATTermsAndConditionsMaster Entry" />
+		<put name="body" value="/manager/ICATTermsAndConditionsMaster/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATTermsAndConditionsMaster.summary"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATTermsAndConditionsMaster Summary" />
+		<put name="body" value="/manager/ICATTermsAndConditionsMaster/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATTermsAndConditionsMaster.view"
+		extends="doc.mainLayout">
+		<put name="title" value="View ICATTermsAndConditionsMaster" />
+		<put name="body" value="/manager/ICATTermsAndConditionsMaster/view.jsp" />
+	</definition>
+	<definition name="manager.ICATTermsAndConditionsMaster.remove"
+		extends="doc.mainLayout">
+		<put name="title" value="Remove ICATTermsAndConditionsMaster" />
+		<put name="body" value="/manager/ICATTermsAndConditionsMaster/remove.jsp" />
+	</definition>
+	<definition name="query.ICATTermsAndConditionsMaster.SearchByPK"
+		extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/query/ICATTermsAndConditionsMaster/SearchByPK.jsp" />
+	</definition>
+	<!-- <<<<<<<<<<<<<< ICATTermsAndConditionsMaster >>>>>>>>>>>>>>> -->
+
+	<!-- <<<<<<<<<<<<<< ICATDisclaimerMaster >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATDisclaimerMaster.entry"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATDisclaimerMaster Entry" />
+		<put name="body" value="/manager/ICATDisclaimerMaster/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATDisclaimerMaster.summary"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATDisclaimerMaster Summary" />
+		<put name="body" value="/manager/ICATDisclaimerMaster/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATDisclaimerMaster.view"
+		extends="doc.mainLayout">
+		<put name="title" value="View ICATDisclaimerMaster" />
+		<put name="body" value="/manager/ICATDisclaimerMaster/view.jsp" />
+	</definition>
+	<definition name="manager.ICATDisclaimerMaster.remove"
+		extends="doc.mainLayout">
+		<put name="title" value="Remove ICATDisclaimerMaster" />
+		<put name="body" value="/manager/ICATDisclaimerMaster/remove.jsp" />
+	</definition>
+	<definition name="query.ICATDisclaimerMaster.SearchByPK"
+		extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/query/ICATDisclaimerMaster/SearchByPK.jsp" />
+	</definition>
+	<!-- <<<<<<<<<<<<<< ICATDisclaimerMaster >>>>>>>>>>>>>>> -->
+
+	<!-- <<<<<<<<<<<<<< ICATCERTIFICATETYPE >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATCERTIFICATETYPE.entry"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATCERTIFICATETYPE Entry" />
+		<put name="body" value="/manager/ICATCERTIFICATETYPE/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATCERTIFICATETYPE.summary"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATCERTIFICATETYPE Summary" />
+		<put name="body" value="/manager/ICATCERTIFICATETYPE/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATCERTIFICATETYPE.view" extends="doc.mainLayout">
+		<put name="title" value="View ICATCERTIFICATETYPE" />
+		<put name="body" value="/manager/ICATCERTIFICATETYPE/view.jsp" />
+	</definition>
+	<definition name="manager.ICATCERTIFICATETYPE.remove"
+		extends="doc.mainLayout">
+		<put name="title" value="Remove ICATCERTIFICATETYPE" />
+		<put name="body" value="/manager/ICATCERTIFICATETYPE/remove.jsp" />
+	</definition>
+	<definition name="query.ICATCERTIFICATETYPE.SearchByPK"
+		extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/query/ICATCERTIFICATETYPE/SearchByPK.jsp" />
+	</definition>
+	<!-- <<<<<<<<<<<<<< ICATPRODUCTHIERARCHY >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATPRODUCTHIERARCHY.entry"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATPRODUCTHIERARCHY Entry" />
+		<put name="body" value="/manager/ICATPRODUCTHIERARCHY/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATPRODUCTHIERARCHY.summary"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATPRODUCTHIERARCHY Summary" />
+		<put name="body" value="/manager/ICATPRODUCTHIERARCHY/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATPRODUCTHIERARCHY.view"
+		extends="doc.mainLayout">
+		<put name="title" value="View ICATPRODUCTHIERARCHY" />
+		<put name="body" value="/manager/ICATPRODUCTHIERARCHY/view.jsp" />
+	</definition>
+	<definition name="manager.ICATPRODUCTHIERARCHY.remove"
+		extends="doc.mainLayout">
+		<put name="title" value="Remove ICATPRODUCTHIERARCHY" />
+		<put name="body" value="/manager/ICATPRODUCTHIERARCHY/remove.jsp" />
+	</definition>
+	<definition name="query.ICATPRODUCTHIERARCHY.SearchByPK"
+		extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/query/ICATPRODUCTHIERARCHY/SearchByPK.jsp" />
+	</definition>
+	<!-- <<<<<<<<<<<<<< ICATSERVICECATEGORY >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATSERVICECATEGORY.entry"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATSERVICECATEGORY Entry" />
+		<put name="body" value="/manager/ICATSERVICECATEGORY/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATSERVICECATEGORY.summary"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATSERVICECATEGORY Summary" />
+		<put name="body" value="/manager/ICATSERVICECATEGORY/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATSERVICECATEGORY.view" extends="doc.mainLayout">
+		<put name="title" value="View ICATSERVICECATEGORY" />
+		<put name="body" value="/manager/ICATSERVICECATEGORY/view.jsp" />
+	</definition>
+	<definition name="manager.ICATSERVICECATEGORY.remove"
+		extends="doc.mainLayout">
+		<put name="title" value="Remove ICATSERVICECATEGORY" />
+		<put name="body" value="/manager/ICATSERVICECATEGORY/remove.jsp" />
+	</definition>
+	<definition name="query.ICATSERVICECATEGORY.SearchByPK"
+		extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/query/ICATSERVICECATEGORY/SearchByPK.jsp" />
+	</definition>
+	<!-- <<<<<<<<<<<<<< ICATVEHICLEMASTER >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATVEHICLEMASTER.entry" extends="doc.mainLayout">
+		<put name="title" value="ICATVEHICLEMASTER Entry" />
+		<put name="body" value="/manager/ICATVEHICLEMASTER/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATVEHICLEMASTER.summary"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATVEHICLEMASTER Summary" />
+		<put name="body" value="/manager/ICATVEHICLEMASTER/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATVEHICLEMASTER.view" extends="doc.mainLayout">
+		<put name="title" value="View ICATVEHICLEMASTER" />
+		<put name="body" value="/manager/ICATVEHICLEMASTER/view.jsp" />
+	</definition>
+	<definition name="manager.ICATVEHICLEMASTER.remove" extends="doc.mainLayout">
+		<put name="title" value="Remove ICATVEHICLEMASTER" />
+		<put name="body" value="/manager/ICATVEHICLEMASTER/remove.jsp" />
+	</definition>
+	<definition name="query.ICATVEHICLEMASTER.SearchByPK"
+		extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/query/ICATVEHICLEMASTER/SearchByPK.jsp" />
+	</definition>
+	<!-- <<<<<<<<<<<<<< ICATCOMPONENTMASTER >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATCOMPONENTMASTER.entry"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATCOMPONENTMASTER Entry" />
+		<put name="body" value="/manager/ICATCOMPONENTMASTER/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATCOMPONENTMASTER.summary"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATCOMPONENTMASTER Summary" />
+		<put name="body" value="/manager/ICATCOMPONENTMASTER/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATCOMPONENTMASTER.remove"
+		extends="doc.mainLayout">
+		<put name="title" value="Remove ICATCOMPONENTMASTER" />
+		<put name="body" value="/manager/ICATCOMPONENTMASTER/remove.jsp" />
+	</definition>
+	<definition name="query.ICATCOMPONENTMASTER.SearchByPK"
+		extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/query/ICATCOMPONENTMASTER/SearchByPK.jsp" />
+	</definition>
+	<definition name="manager.ICATCOMPONENTMASTER.view" extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATCOMPONENTMASTER/view.jsp" />
+	</definition>
+	<!-- <<<<<<<<<<<<<< ICATLIMITMASTER >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATLIMITMASTER.entry" extends="doc.mainLayout">
+		<put name="title" value="ICATLIMITMASTER Entry" />
+		<put name="body" value="/manager/ICATLIMITMASTER/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATLIMITMASTER.summary" extends="doc.mainLayout">
+		<put name="title" value="ICATLIMITMASTER Summary" />
+		<put name="body" value="/manager/ICATLIMITMASTER/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATLIMITMASTER.view" extends="doc.mainLayout">
+		<put name="title" value="View ICATLIMITMASTER" />
+		<put name="body" value="/manager/ICATLIMITMASTER/view.jsp" />
+	</definition>
+	<definition name="manager.ICATLIMITMASTER.remove" extends="doc.mainLayout">
+		<put name="title" value="Remove ICATLIMITMASTER" />
+		<put name="body" value="/manager/ICATLIMITMASTER/remove.jsp" />
+	</definition>
+	<definition name="query.ICATLIMITMASTER.SearchByPK" extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/query/ICATLIMITMASTER/SearchByPK.jsp" />
+	</definition>
+	<!-- <<<<<<<<<<<<<< ICATOTHERCHARGES >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATOTHERCHARGES.entry" extends="doc.mainLayout">
+		<put name="title" value="ICATOTHERCHARGES Entry" />
+		<put name="body" value="/manager/ICATOTHERCHARGES/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATOTHERCHARGES.summary" extends="doc.mainLayout">
+		<put name="title" value="ICATOTHERCHARGES Summary" />
+		<put name="body" value="/manager/ICATOTHERCHARGES/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATOTHERCHARGES.view" extends="doc.mainLayout">
+		<put name="title" value="View ICATOTHERCHARGES" />
+		<put name="body" value="/manager/ICATOTHERCHARGES/view.jsp" />
+	</definition>
+	<definition name="manager.ICATOTHERCHARGES.remove" extends="doc.mainLayout">
+		<put name="title" value="Remove ICATOTHERCHARGES" />
+		<put name="body" value="/manager/ICATOTHERCHARGES/remove.jsp" />
+	</definition>
+	<definition name="query.ICATOTHERCHARGES.SearchByPK"
+		extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/query/ICATOTHERCHARGES/SearchByPK.jsp" />
+	</definition>
+	<!-- <<<<<<<<<<<<<< ICATTESTCHARGES >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATTESTCHARGES.entry" extends="doc.mainLayout">
+		<put name="title" value="ICATTESTCHARGES Entry" />
+		<put name="body" value="/manager/ICATTESTCHARGES/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATTESTCHARGES.summary" extends="doc.mainLayout">
+		<put name="title" value="ICATTESTCHARGES Summary" />
+		<put name="body" value="/manager/ICATTESTCHARGES/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATTESTCHARGES.view" extends="doc.mainLayout">
+		<put name="title" value="View ICATTESTCHARGES" />
+		<put name="body" value="/manager/ICATTESTCHARGES/view.jsp" />
+	</definition>
+	<definition name="manager.ICATTESTCHARGES.remove" extends="doc.mainLayout">
+		<put name="title" value="Remove ICATTESTCHARGES" />
+		<put name="body" value="/manager/ICATTESTCHARGES/remove.jsp" />
+	</definition>
+	<definition name="query.ICATTESTCHARGES.SearchByPK" extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/query/ICATTESTCHARGES/SearchByPK.jsp" />
+	</definition>
+	<!-- <<<<<<<<<<<<<< ICATTESTMASTER >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATTESTMASTER.entry" extends="doc.mainLayout">
+		<put name="title" value="ICATTESTMASTER Entry" />
+		<put name="body" value="/manager/ICATTESTMASTER/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATTESTMASTER.summary" extends="doc.mainLayout">
+		<put name="title" value="ICATTESTMASTER Summary" />
+		<put name="body" value="/manager/ICATTESTMASTER/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATTESTMASTER.view" extends="doc.mainLayout">
+		<put name="title" value="View ICATTESTMASTER" />
+		<put name="body" value="/manager/ICATTESTMASTER/view.jsp" />
+	</definition>
+	<definition name="manager.ICATTESTMASTER.remove" extends="doc.mainLayout">
+		<put name="title" value="Remove ICATTESTMASTER" />
+		<put name="body" value="/manager/ICATTESTMASTER/remove.jsp" />
+	</definition>
+	<definition name="query.ICATTESTMASTER.SearchByPK" extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/query/ICATTESTMASTER/SearchByPK.jsp" />
+	</definition>
+
+	<!-- <<<<<<<<<<<<<< ICATCMVRRULES >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATCMVRRULES.entry" extends="doc.mainLayout">
+		<put name="title" value="ICATCMVRRULES Entry" />
+		<put name="body" value="/manager/ICATCMVRRULES/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATCMVRRULES.summary" extends="doc.mainLayout">
+		<put name="title" value="ICATCMVRRULES Summary" />
+		<put name="body" value="/manager/ICATCMVRRULES/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATCMVRRULES.view" extends="doc.mainLayout">
+		<put name="title" value="View ICATCMVRRULES" />
+		<put name="body" value="/manager/ICATCMVRRULES/view.jsp" />
+	</definition>
+	<definition name="manager.ICATCMVRRULES.remove" extends="doc.mainLayout">
+		<put name="title" value="Remove ICATCMVRRULES" />
+		<put name="body" value="/manager/ICATCMVRRULES/remove.jsp" />
+	</definition>
+	<definition name="query.ICATCMVRRULES.SearchByPK" extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/query/ICATCMVRRULES/SearchByPK.jsp" />
+	</definition>
+
+	<!-- <<<<<<<<<<<<<< ICATENVPARAMETERS >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATENVPARAMETERS.entry" extends="doc.mainLayout">
+		<put name="title" value="ICATENVPARAMETERS Entry" />
+		<put name="body" value="/manager/ICATENVPARAMETERS/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATENVPARAMETERS.summary"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATENVPARAMETERS Summary" />
+		<put name="body" value="/manager/ICATENVPARAMETERS/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATENVPARAMETERS.view" extends="doc.mainLayout">
+		<put name="title" value="View ICATENVPARAMETERS" />
+		<put name="body" value="/manager/ICATENVPARAMETERS/view.jsp" />
+	</definition>
+	<definition name="manager.ICATENVPARAMETERS.remove" extends="doc.mainLayout">
+		<put name="title" value="Remove ICATENVPARAMETERS" />
+		<put name="body" value="/manager/ICATENVPARAMETERS/remove.jsp" />
+	</definition>
+	<definition name="query.ICATENVPARAMETERS.SearchByPK"
+		extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/query/ICATENVPARAMETERS/SearchByPK.jsp" />
+	</definition>
+	<!-- <<<<<<<<<<<<<< ICATHOLOGRAMMASTER >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATHOLOGRAMMASTER.entry" extends="doc.mainLayout">
+		<put name="title" value="ICATHOLOGRAMMASTER Entry" />
+		<put name="body" value="/manager/ICATHOLOGRAMMASTER/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATHOLOGRAMMASTER.summary"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATHOLOGRAMMASTER Summary" />
+		<put name="body" value="/manager/ICATHOLOGRAMMASTER/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATHOLOGRAMMASTER.changeStatus"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATHOLOGRAMMASTER ChangeStatus" />
+		<put name="body" value="/manager/ICATHOLOGRAMMASTER/changeStatus.jsp" />
+	</definition>
+	<definition name="manager.ICATHOLOGRAMMASTER.ViewHolograms"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATHOLOGRAMMASTER ViewHolograms" />
+		<put name="body" value="/manager/ICATHOLOGRAMMASTER/ViewHolograms.jsp" />
+	</definition>
+	<definition name="manager.ICATHOLOGRAMMASTER.view" extends="doc.mainLayout">
+		<put name="title" value="View ICATHOLOGRAMMASTER" />
+		<put name="body" value="/manager/ICATHOLOGRAMMASTER/view.jsp" />
+	</definition>
+	<definition name="manager.ICATHOLOGRAMMASTER.remove"
+		extends="doc.mainLayout">
+		<put name="title" value="Remove ICATHOLOGRAMMASTER" />
+		<put name="body" value="/manager/ICATHOLOGRAMMASTER/remove.jsp" />
+	</definition>
+	<definition name="query.ICATHOLOGRAMMASTER.SearchByPK"
+		extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/query/ICATHOLOGRAMMASTER/SearchByPK.jsp" />
+	</definition>
+	
+	<!--START CODE REL #44 CHR284 ADDED BY SHITAL B FOR BILLING OF EVENTS ON 6-JAN-14-->
+	<definition name="manager.ICATEVENTMASTER.entry"
+		extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATEVENTMASTER/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATEVENTMASTER.summary"
+		extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATEVENTMASTER/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATEVENTMASTER.view"
+		extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATEVENTMASTER/view.jsp" />
+	</definition>
+	<definition name="manager.ICATEVENTMASTER.remove"
+		extends="doc.mainLayout">
+		<put name="body" value="/manager/ICATEVENTMASTER/remove.jsp" />
+	</definition>
+	
+	<!-- RELEASE 44 CHR 284 AUTHOR MUKTARAM C. -->
+	<definition name="generateEventDocketPath"	extends="doc.mainLayout">
+		<put name="body" value="/jsp/event/generateEventDocket.jsp" />
+	</definition>
+	
+	
+	<definition name="eventDocketMISPath"	extends="doc.mainLayout">
+		<put name="body" value="/jsp/event/eventDocketMIS.jsp" />
+	</definition>
+	
+	<!-- End -->
+
+	<definition name="PropSubPreviewPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/PropSubConfirmPage.jsp" />
+	</definition>
+
+	<definition name="PropSubSuccessPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/PropSubSuccessPage.jsp" />
+	</definition>
+
+	<definition name="ViewPropertiesPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ViewProperty.jsp" />
+	</definition>
+
+	<definition name="ProcessPropSubPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ProcessPropertySubPage.jsp" />
+	</definition>
+
+	<definition name="ProcessMyPropSubPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ProcessMyPropertySubPage.jsp" />
+	</definition>
+
+	<definition name="PropertyAcknowledgmentDetails" extends="doc.mainLayout">
+		<put name="body" value="/jsp/PropertyAcknowledgmentDetails.jsp" />
+	</definition>
+	<!--
+		START: Code Added by Hrishikesh N. for PI Generation, Date : 25th Jan
+		2010
+	-->
+
+	<definition name="activeDocketListPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/activeDocketList.jsp" />
+	</definition>
+
+	<definition name="testDetailsListPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/testDetailsList.jsp" />
+	</definition>
+
+	<definition name="editPIPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/editPI.jsp" />
+	</definition>
+
+	<definition name="allPIListPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/allPIList.jsp" />
+	</definition>
+
+	<definition name="sentApprovalMessagePath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/sentMessage.jsp" />
+	</definition>
+
+	<definition name="viewPIPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/viewPI.jsp" />
+	</definition>
+
+	<!--
+		END: Code Added by Hrishikesh N. for PI Generation, Date : 25th Jan
+		2010
+	-->
+
+	<!--
+		START: Code Added by Hrishikesh N. for IOC Generation, Date : 25th Jan
+		2010
+	-->
+
+	<definition name="iocActiveDocketListPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/iocActiveDocketList.jsp" />
+	</definition>
+
+	<definition name="iocTestDetailsListPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/iocTestDetailsList.jsp" />
+	</definition>
+
+	<definition name="editIOCPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/editIOC.jsp" />
+	</definition>
+
+	<definition name="allIOCListPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/allIOCList.jsp" />
+	</definition>
+
+	<definition name="viewIOCPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/viewIOC.jsp" />
+	</definition>
+
+	<!--
+		END: Code Added by Hrishikesh N. for IOC Generation, Date : 25th Jan
+		2010
+	-->
+	<!--
+		START: Code Added by Anup Mehta for MIS Matrix Access, Date : 30th Nov
+		2011 
+	-->
+	<definition name="DisplayAccessMatrix" extends="doc.mainLayout">
+		<put name="body" value="/jsp/MISAccessMatrix.jsp" />
+	</definition>
+	<definition name="EditAccessMatrix" extends="doc.mainLayout">
+		<put name="body" value="/jsp/EditMISAccessMatrix.jsp" />
+	</definition>
+	<definition name="SuccessAccessMatrix" extends="doc.mainLayout">
+		<put name="body" value="/jsp/MISAccessSuccess.jsp" />
+	</definition>
+	<!--
+		END: Code Added by Anup Mehta for MIS Matrix Access, Date : 30th Nov
+		2011
+	-->
+	<!--
+		START: Code Added by Anup Mehta for MIS Graphical Representation, Date : 8th Feb 2012
+	-->
+	
+	<definition name="DisplayGraph" extends="doc.mainLayout">
+		<put name="body" value="/jsp/MISGraphRep.jsp" />
+	</definition>
+
+	<!--
+		END: Code Added by Anup Mehta for MIS Graphical Representation, Date : 8th Feb 2012
+	-->
+	
+
+	<!--
+		START: Code Added by Anup Mehta for Application Config Pending Req Page (CHR176), Date : 15th Dec
+		2011 
+	-->
+	
+	<definition name="ApplnConfigPendingReq" extends="doc.mainLayout">
+		<put name="body" value="/jsp/applicationConfig/ApplConfigPendingData.jsp" />
+	</definition>
+	<!--
+		END: Code Added by Anup Mehta for Application Config Pending Req Page (CHR176), Date : 15th Dec
+		2011
+	-->
+	
+	<!--
+		START: Code Added by Apurv K. for AIOC Generation, Date : 20th April
+		2011
+	-->
+	<definition name="aiocTestDetailsListPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/aiocTestDetailsList.jsp" />
+	</definition>
+	<definition name="viewAIOCPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/viewAIOC.jsp" />
+	</definition>
+	<!--
+		END: Code Added by Apurv K. for AIOC Generation, Date : 20th April
+		2011
+	-->
+	<!--
+		START: Code Added by Prakash Suthar for OC Generation, Date : 2nd Feb,
+		2010
+	-->
+
+	<definition name="ocActiveDocketListPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/ocActiveDocketList.jsp" />
+	</definition>
+
+	<definition name="ocTestDetailsListPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/ocTestDetailsList.jsp" />
+	</definition>
+	
+	<definition name="aocTestDetailsListPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/aocTestDetailsList.jsp" />
+	</definition>
+
+	<definition name="editOCPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/editOC.jsp" />
+	</definition>
+
+	<definition name="ocEditDocketListPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/ocEditDocketList.jsp" />
+	</definition>
+
+	<!--
+		End: Code Added by Prakash Suthar for OC Generation, Date : 2nd Feb,
+		2010
+	-->
+
+	<!--
+		Start: code added by Abhishek Mehta for Certification Compilation
+	-->
+
+	<definition name="CertificateCompilationPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/CertificateCompilation/CertificateCompilation.jsp" />
+	</definition>
+	<!--CHR558:GENSET CERTIFICATE -->
+	<definition name="GensetCertificateForm" extends="doc.mainLayout">
+		<put name="body" value="/jsp/CertificateCompilation/gensetCertificate.jsp"></put>
+	</definition>
+	
+	<!--CHR571:GENSET COP CERTIFICATE -->
+	<definition name="GensetCopCertificateForm" extends="doc.mainLayout">
+	<put name="body" value="/jsp/CertificateCompilation/copgensetCertificate.jsp"></put>
+	</definition>
+	
+	<!--CHR579:TWO WHEELER CERTIFICATE -->
+	<definition name="TwoWheelerCertificateForm" extends="doc.mainLayout">
+	<put name="body" value="/jsp/CertificateCompilation/twowheelercertificate.jsp"></put>
+	</definition>
+	
+	<definition name="SuccessCompilationPath" extends="doc.mainLayout">
+		<put name="body"
+			value="/jsp/CertificateCompilation/SuccessCertificateCompilation.jsp" />
+	</definition>
+
+	<definition name="TriggerCertGenWFPath" extends="doc.mainLayout">
+		<put name="body"
+			value="/jsp/CertificateCompilation/triggerCertificateGenerationWF.jsp" />
+	</definition>
+
+
+
+	<!--
+		End : code added by Abhishek Mehta for Certification Compilation
+	-->
+
+
+	<definition name="fiActiveDocketListPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/fiActiveDocketList.jsp" />
+	</definition>
+	<definition name="generateFIPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/generateFI.jsp" />
+	</definition>
+	<definition name="fiTestDetailsListPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/fiTestDetailsList.jsp" />
+	</definition>
+	<definition name="editFIPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/editFI.jsp" />
+	</definition>
+	<definition name="viewFIPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/viewFI.jsp" />
+	</definition>
+	<definition name="fiEditDocketListPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/fiEditDocketList.jsp" />
+	</definition>
+
+	<!-- 
+		@Apurv Amendment
+	 -->
+	 <definition name="afiActiveDocketListPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/afiActiveDocketList.jsp" />
+	</definition>
+	<definition name="generateAFIPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/generateAFI.jsp" />
+	</definition>
+	<definition name="afiTestDetailsListPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/afiTestDetailsList.jsp" />
+	</definition>
+	<definition name="viewAFIPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/invoice/viewAFI.jsp" />
+	</definition>
+	<!--
+		<<<<<<<<<<<<<< Email Utility Avitra Kumar (5th Feb 2010)
+		>>>>>>>>>>>>>>>
+	-->
+	<definition name="VerifyMailpath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/VerifyMails.jsp" />
+	</definition>
+	<definition name="VerifyCusomerMailPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/VerifyCustomerMail.jsp" />
+	</definition>
+	<!-- <<<<<<<<<<<<<< Email Utility  END >>>>>>>>>>>>>>> -->
+	<definition name="ShowCasePath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/CustomerCaseView.jsp" />
+	</definition>
+	<definition name="TestDetailsPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/CSCTestView.jsp" />
+	</definition>
+	<definition name="RechristenCertificate" extends="doc.mainLayout">
+		<put name="body" value="/jsp/RechristenCertificate.jsp" />
+	</definition>
+	<definition name="ShowShortCloseHODPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ShortCloseHOD.jsp" />
+	</definition>
+	<definition name="ShowShortCloseDIRPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ShortCloseDIR.jsp" />
+	</definition>
+	<definition name="LogsheetReportPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/LogsheetReport.jsp" />
+	</definition>
+	<definition name="caseShortClose" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ShortClose.jsp" />
+	</definition>
+	<definition name="ShortCloseList" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ShortCloseList.jsp" />
+	</definition>
+	<!-- Start change Medha 11 Apr for Reissue Certificate -->
+	<definition name="ReissueCertificateViewList" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ReissueCertificateViewDetails.jsp" />
+	</definition>
+	<definition name="ReissueCertificateList" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ReissueCertificateList.jsp" />
+	</definition>
+	<definition name="reissueCertificate" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ReissueCertificate.jsp" />
+	</definition>
+	<definition name="insertReissueCertificateDetails" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ReissueCertificate.jsp" />
+	</definition>
+	<!-- End Change -->
+	<definition name="TestStatus" extends="doc.mainLayout">
+		<put name="body" value="/jsp/TestReschedule.jsp" />
+	</definition>
+	<definition name="ShowCSCCorrPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/CSCCorrective.jsp" />
+	</definition>
+
+	<!--
+		START: Code Added by Prakash Suthar for Schedule Test, dated 5th Mar,
+		2010
+	-->
+
+	<definition name="scheduleTestPath" extends="doc.mainLayout">
+		<put name="body"
+			value="/apps/icat/jsp/scheduler/Schedule_Test_By_Department.jsp" />
+	</definition>
+	<definition name="scheduleForApprovalPath" extends="doc.mainLayout">
+		<put name="body" value="/apps/icat/jsp/scheduler/scheduleForApproval.jsp" />
+	</definition>
+	<definition name="gettestlistpath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/testApproveReject.jsp" />
+	</definition>
+	
+	<definition name="HighscheduleForApprovalPath" extends="doc.mainLayout">
+		<put name="body" value="/apps/icat/jsp/scheduler/HighscheduleForApproval.jsp" />
+	</definition>
+	<definition name="CSCHighLevelSchedule" extends="doc.mainLayout">
+		<put name="body" value="/apps/icat/jsp/scheduler/CSC_High_Level_Schedule.jsp" />
+	</definition>
+	<!--
+		END: Code Added by Prakash Suthar for Schedule Test, dated 5th Mar,
+		2010
+	-->
+	<definition name="DocketStatusDetails" extends="doc.mainLayout">
+		<put name="body" value="/jsp/DocketStatusDetails.jsp" />
+	</definition>
+	<definition name="DocketInternalStatus" extends="doc.mainLayout">
+		<put name="body" value="/jsp/DocketInternalStatus.jsp" />
+	</definition>
+
+	<!-- Start :: Added by MeghaT for iCAT Engine Masters -->
+
+	<!-- <<<<<<<<<<<<<< ICATENGINEAPPTYPE >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATENGINEAPPTYPE.entry" extends="doc.mainLayout">
+		<put name="title" value="ICATENGINEAPPTYPE Entry" />
+		<put name="body" value="/manager/ICATENGINEAPPTYPE/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATENGINEAPPTYPE.summary"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATENGINEAPPTYPE Summary" />
+		<put name="body" value="/manager/ICATENGINEAPPTYPE/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATENGINEAPPTYPE.view" extends="doc.mainLayout">
+		<put name="title" value="View ICATENGINEAPPTYPE" />
+		<put name="body" value="/manager/ICATENGINEAPPTYPE/view.jsp" />
+	</definition>
+	<definition name="manager.ICATENGINEAPPTYPE.remove" extends="doc.mainLayout">
+		<put name="title" value="Remove ICATENGINEAPPTYPE" />
+		<put name="body" value="/manager/ICATENGINEAPPTYPE/remove.jsp" />
+	</definition>
+	<definition name="query.ICATENGINEAPPTYPE.SearchByPK"
+		extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/query/ICATENGINEAPPTYPE/SearchByPK.jsp" />
+	</definition>
+	<!-- <<<<<<<<<<<<<< ICATENGINEMASTER >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATENGINEMASTER.entry" extends="doc.mainLayout">
+		<put name="title" value="ICATENGINEMASTER Entry" />
+		<put name="body" value="/manager/ICATENGINEMASTER/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATENGINEMASTER.summary" extends="doc.mainLayout">
+		<put name="title" value="ICATENGINEMASTER Summary" />
+		<put name="body" value="/manager/ICATENGINEMASTER/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATENGINEMASTER.view" extends="doc.mainLayout">
+		<put name="title" value="View ICATENGINEMASTER" />
+		<put name="body" value="/manager/ICATENGINEMASTER/view.jsp" />
+	</definition>
+	<definition name="manager.ICATENGINEMASTER.remove" extends="doc.mainLayout">
+		<put name="title" value="Remove ICATENGINEMASTER" />
+		<put name="body" value="/manager/ICATENGINEMASTER/remove.jsp" />
+	</definition>
+	<definition name="query.ICATENGINEMASTER.SearchByPK"
+		extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/query/ICATENGINEMASTER/SearchByPK.jsp" />
+	</definition>
+	<!-- <<<<<<<<<<<<<< ICATENGINEPOWER >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATENGINEPOWER.entry" extends="doc.mainLayout">
+		<put name="title" value="ICATENGINEPOWER Entry" />
+		<put name="body" value="/manager/ICATENGINEPOWER/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATENGINEPOWER.summary" extends="doc.mainLayout">
+		<put name="title" value="ICATENGINEPOWER Summary" />
+		<put name="body" value="/manager/ICATENGINEPOWER/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATENGINEPOWER.view" extends="doc.mainLayout">
+		<put name="title" value="View ICATENGINEPOWER" />
+		<put name="body" value="/manager/ICATENGINEPOWER/view.jsp" />
+	</definition>
+	<definition name="manager.ICATENGINEPOWER.remove" extends="doc.mainLayout">
+		<put name="title" value="Remove ICATENGINEPOWER" />
+		<put name="body" value="/manager/ICATENGINEPOWER/remove.jsp" />
+	</definition>
+	<definition name="query.ICATENGINEPOWER.SearchByPK" extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/query/ICATENGINEPOWER/SearchByPK.jsp" />
+	</definition>
+	<!-- End :: Added by MeghaT for iCAT Engine Masters -->
+
+	<!-- Start :: Added by MeghaT for iCAT Vehicle Masters -->
+	<definition name="manager.ICATVEHICLEMASTER.entry" extends="doc.mainLayout">
+		<put name="title" value="ICATVEHICLEMASTER Entry" />
+		<put name="body" value="/manager/ICATVEHICLEMASTER/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATVEHICLEMASTER.summary"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATVEHICLEMASTER Summary" />
+		<put name="body" value="/manager/ICATVEHICLEMASTER/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATVEHICLEMASTER.view" extends="doc.mainLayout">
+		<put name="title" value="View ICATVEHICLEMASTER" />
+		<put name="body" value="/manager/ICATVEHICLEMASTER/view.jsp" />
+	</definition>
+	<definition name="manager.ICATVEHICLEMASTER.remove" extends="doc.mainLayout">
+		<put name="title" value="Remove ICATVEHICLEMASTER" />
+		<put name="body" value="/manager/ICATVEHICLEMASTER/remove.jsp" />
+	</definition>
+	<definition name="query.ICATVEHICLEMASTER.SearchByPK"
+		extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/query/ICATVEHICLEMASTER/SearchByPK.jsp" />
+	</definition>
+	<!-- End :: Added by MeghaT for iCAT Vehicle Masters -->
+
+	<!-- Start :: Added by MeghaT for iCAT Component Masters -->
+	<definition name="manager.ICATCOMPONENTMASTER.entry"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATCOMPONENTMASTER Entry" />
+		<put name="body" value="/manager/ICATCOMPONENTMASTER/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATCOMPONENTMASTER.summary"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATCOMPONENTMASTER Summary" />
+		<put name="body" value="/manager/ICATCOMPONENTMASTER/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATCOMPONENTMASTER.view" extends="doc.mainLayout">
+		<put name="title" value="View ICATCOMPONENTMASTER" />
+		<put name="body" value="/manager/ICATCOMPONENTMASTER/view.jsp" />
+	</definition>
+	<definition name="manager.ICATCOMPONENTMASTER.remove"
+		extends="doc.mainLayout">
+		<put name="title" value="Remove ICATCOMPONENTMASTER" />
+		<put name="body" value="/manager/ICATCOMPONENTMASTER/remove.jsp" />
+	</definition>
+	<definition name="query.ICATCOMPONENTMASTER.SearchByPK"
+		extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/query/ICATCOMPONENTMASTER/SearchByPK.jsp" />
+	</definition>
+
+	<!-- End :: Added by MeghaT for iCAT Component Masters -->
+
+	<!-- Start :: Added by MeghaT for iCAT Help Masters -->
+
+	<definition name="manager.ICATHELPMASTER.entry" extends="doc.mainLayout">
+		<put name="title" value="ICATHELPMASTER Entry" />
+		<put name="body" value="/manager/ICATHELPMASTER/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATHELPMASTER.summary" extends="doc.mainLayout">
+		<put name="title" value="ICATHELPMASTER Summary" />
+		<put name="body" value="/manager/ICATHELPMASTER/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATHELPMASTER.view" extends="doc.mainLayout">
+		<put name="title" value="View ICATHELPMASTER" />
+		<put name="body" value="/manager/ICATHELPMASTER/view.jsp" />
+	</definition>
+	<definition name="manager.ICATHELPMASTER.remove" extends="doc.mainLayout">
+		<put name="title" value="Remove ICATHELPMASTER" />
+		<put name="body" value="/manager/ICATHELPMASTER/remove.jsp" />
+	</definition>
+	<definition name="query.ICATHELPMASTER.SearchByPK" extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/query/ICATHELPMASTER/SearchByPK.jsp" />
+	</definition>
+	<!-- End :: Added by MeghaT for iCAT Help Masters -->
+
+	<!-- Start :: Added by MeghaT for iCAT MENU Masters -->
+
+	<definition name="manager.ICATMENUMASTER.entry" extends="doc.mainLayout">
+		<put name="title" value="ICATMENUMASTER Entry" />
+		<put name="body" value="/manager/ICATMENUMASTER/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATMENUMASTER.summary" extends="doc.mainLayout">
+		<put name="title" value="ICATMENUMASTER Summary" />
+		<put name="body" value="/manager/ICATMENUMASTER/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATMENUMASTER.view" extends="doc.mainLayout">
+		<put name="title" value="View ICATMENUMASTER" />
+		<put name="body" value="/manager/ICATMENUMASTER/view.jsp" />
+	</definition>
+	<definition name="manager.ICATMENUMASTER.remove" extends="doc.mainLayout">
+		<put name="title" value="Remove ICATMENUMASTER" />
+		<put name="body" value="/manager/ICATMENUMASTER/remove.jsp" />
+	</definition>
+	<definition name="query.ICATMENUMASTER.SearchByPK" extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/query/ICATMENUMASTER/SearchByPK.jsp" />
+	</definition>
+	<!-- End :: Added by MeghaT for iCAT MENU Masters -->
+
+	<!-- Start :: Added by MeghaT for iCAT STDREG Masters -->
+
+	<definition name="manager.ICATSTDREGMASTER.entry" extends="doc.mainLayout">
+		<put name="title" value="ICATSTDREGMASTER Entry" />
+		<put name="body" value="/manager/ICATSTDREGMASTER/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATSTDREGMASTER.summary" extends="doc.mainLayout">
+		<put name="title" value="ICATSTDREGMASTER Summary" />
+		<put name="body" value="/manager/ICATSTDREGMASTER/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATSTDREGMASTER.view" extends="doc.mainLayout">
+		<put name="title" value="View ICATSTDREGMASTER" />
+		<put name="body" value="/manager/ICATSTDREGMASTER/view.jsp" />
+	</definition>
+	<definition name="manager.ICATSTDREGMASTER.remove" extends="doc.mainLayout">
+		<put name="title" value="Remove ICATSTDREGMASTER" />
+		<put name="body" value="/manager/ICATSTDREGMASTER/remove.jsp" />
+	</definition>
+	<definition name="query.ICATSTDREGMASTER.SearchByPK"
+		extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/query/ICATSTDREGMASTER/SearchByPK.jsp" />
+	</definition>
+	<!-- End :: Added by MeghaT for iCAT STDREG Masters -->
+
+	<!-- Start :: Added by MeghaT for iCAT CUSTOMER Masters -->
+
+	<definition name="manager.ICATCUSTOMERMASTER.entry" extends="doc.mainLayout">
+		<put name="title" value="ICATCUSTOMERMASTER Entry" />
+		<put name="body" value="/manager/ICATCUSTOMERMASTER/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATCUSTOMERMASTER.summary"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATCUSTOMERMASTER Summary" />
+		<put name="body" value="/manager/ICATCUSTOMERMASTER/summary.jsp" />
+	</definition>
+	       	<!-- CHR592 RELEASE #63  -->
+	<definition name="manager.ICATCUSTOMERMASTER.noniocscustomerlist"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATCUSTOMERMASTER Summary" />
+		<put name="body" value="/manager/ICATCUSTOMERMASTER/noniocscustomerlist.jsp" />
+	</definition>
+	
+	<definition name="manager.ICATCUSTOMERMASTER.addnoniocscustomer"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATCUSTOMERMASTER Summary" />
+		<put name="body" value="/manager/ICATCUSTOMERMASTER/addnoniocscustomer.jsp" />
+	</definition>
+	<!--CHR530 RELEASE #56 -->
+	<definition name="generateRFQPath"
+		extends="doc.mainLayout">
+		<put name="body" value="/jsp/generateRFQ.jsp" />
+	</definition>
+	<definition name="editRFQListPath"
+		extends="doc.mainLayout">
+		<put name="body" value="/jsp/editRFQList.jsp" />
+	</definition>
+	
+	<!--CHR339 RELEASE #51 -->
+	<definition name="manager.ICATCUSTOMERMASTER.paymentpropertylist"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATCUSTOMERMASTER Summary" />
+		<put name="body" value="/jsp/paymentpropertylist.jsp" />
+	</definition>
+	<!--CHR529 RELEASE #56 -->
+	<definition name="manager.ICATCUSTOMERMASTER.propertySubmissionlist"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATCUSTOMERMASTER Summary" />
+		<put name="body" value="/jsp/propertySubmissionList.jsp" />
+	</definition>
+
+	<definition name="manager.ICATCUSTOMERMASTER.remove"
+		extends="doc.mainLayout">
+		<put name="title" value="Remove ICATCUSTOMERMASTER" />
+		<put name="body" value="/manager/ICATCUSTOMERMASTER/remove.jsp" />
+	</definition>
+	<definition name="query.ICATCUSTOMERMASTER.SearchByPK"
+		extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/query/ICATCUSTOMERMASTER/SearchByPK.jsp" />
+	</definition>
+	<!-- End :: Added by MeghaT for iCAT CUSTOMER Masters -->
+
+	<!-- Start :: Added By MeghaT for DEPARTMENT ROLE LEVEL Master -->
+
+	<definition name="manager.ICATDEPTROLELEVELMASTER.entry"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATDEPTROLELEVELMASTER Entry" />
+		<put name="body" value="/manager/ICATDEPTROLELEVELMASTER/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATDEPTROLELEVELMASTER.summary"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATDEPTROLELEVELMASTER Summary" />
+		<put name="body" value="/manager/ICATDEPTROLELEVELMASTER/summary.jsp" />
+	</definition>
+
+	<definition name="manager.ICATDEPTROLELEVELMASTER.remove"
+		extends="doc.mainLayout">
+		<put name="title" value="Remove ICATDEPTROLELEVELMASTER" />
+		<put name="body" value="/manager/ICATDEPTROLELEVELMASTER/remove.jsp" />
+	</definition>
+	<definition name="query.ICATDEPTROLELEVELMASTER.SearchByPK"
+		extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/query/ICATDEPTROLELEVELMASTER/SearchByPK.jsp" />
+	</definition>
+	<!-- End :: Added By MeghaT for DEPARTMENT ROLE LEVEL Master -->
+	
+	<!-- <<<<<<<<<<<<<< ICATREFERENCESTDMASTER >>>>>>>>>>>>>>> -->
+	<definition name="manager.ICATREFERENCESTDMASTER.entry"
+		extends="doc.mainLayout">
+		<put name="title" value="ICATREFERENCESTDMASTER Entry" />
+		<put name="body" value="/manager/ICATREFERENCESTDMASTER/entry.jsp" />
+	</definition>
+	<definition name="manager.ICATREFERENCESTDMASTER.summary" extends="doc.mainLayout">
+		<put name="title" value="ICATREFERENCESTDMASTER Summary" />
+		<put name="body" value="/manager/ICATREFERENCESTDMASTER/summary.jsp" />
+	</definition>
+	<definition name="manager.ICATREFERENCESTDMASTER.view" extends="doc.mainLayout">
+		<put name="title" value="View ICATREFERENCESTDMASTER" />
+		<put name="body" value="/manager/ICATREFERENCESTDMASTER/view.jsp" />
+	</definition>
+	<definition name="manager.ICATREFERENCESTDMASTER.remove"
+		extends="doc.mainLayout">
+		<put name="title" value="Remove ICATREFERENCESTDMASTER" />
+		<put name="body" value="/manager/ICATREFERENCESTDMASTER/remove.jsp" />
+	</definition>
+	<definition name="query.ICATREFERENCESTDMASTER.SearchByPK"
+		extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/query/ICATREFERENCESTDMASTER/SearchByPK.jsp" />
+	</definition>
+	<!-- <<<<<<<<<<<<<< ICATREFERENCESTDMASTER >>>>>>>>>>>>>>> -->
+
+	<!-- <<<<<<<<<<<<<<<<Searching >>>>>>>>>>>>>>>> -->
+	<definition name="SearchPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/search/SearchPage.jsp" />
+	</definition>
+	<definition name="SearchProduct" extends="doc.mainLayout">
+		<put name="body" value="/jsp/search/SearchProduct.jsp" />
+	</definition>
+	<definition name="ProductHierarchy" extends="doc.mainLayout">
+		<put name="body" value="/jsp/search/PordHierarchy.jsp" />
+	</definition>
+	<definition name="PaginationPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/search/PaginationExample.jsp" />
+	</definition>
+	<!-- End :: SearchAction -->
+	<!-- <<<<<<<<<<<<<<<<Searching Password>>>>>>>>>>>>>>>> -->
+	<definition name="SearchPassPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/searchPassword.jsp" />
+	</definition>
+	<definition name="PasswdPaginationPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/SearchPasswdPagination.jsp" />
+	</definition>
+	<!-- End :: SearchPasswordAction -->
+
+	<!-- for customer inbox -->
+	<definition name="viewMessageListPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ViewMailList.jsp" />
+	</definition>
+	<definition name="viewMessageInDetailPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/ViewMailInDetail.jsp" />
+	</definition>
+	<!-- end ::customer inbox -->
+	<!-- for feedback -->
+
+	<definition name="OpenFeedbackPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/FeedbackPage.jsp" />
+	</definition>
+
+	<definition name="GetFeedbackPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/GetFeedbackPage.jsp" />
+	</definition>
+
+	<definition name="GetFeedBackDetailsPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/GetFeedbackDetails.jsp" />
+	</definition>
+
+	<definition name="successPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/succesFeedback.jsp" />
+	</definition>
+
+
+	<!--Start:ApplicationConfig  -->
+	<definition name="ApplicationConfigPath" extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body"
+			value="/jsp/applicationConfig/ApplicationConfigChangeRequest.jsp" />
+	</definition>
+	<definition name="ApplicationConfigNewRequestPath" extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/jsp/applicationConfig/ApplicationConfigNewRequest.jsp" />
+	</definition>
+	<definition name="ApplicationConfigApproveRequestPath"
+		extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body"
+			value="/jsp/applicationConfig/ApplicationConfigApproveRequest.jsp" />
+	</definition>
+	<definition name="ApplicationConfigApproveListPath" extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body"
+			value="/jsp/applicationConfig/ApplicationConfigApproveList.jsp" />
+	</definition>
+	<!--End:ApplicationConfig  -->
+
+	<definition name="UploadMOU" extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/jsp/uploadMOU.jsp" />
+	</definition>
+	<definition name="TestDeptCat" extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/jsp/testDeptCategorization.jsp" />
+	</definition>
+
+	<definition name="ComingSoonPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/coming_soon.html" />
+	</definition>
+
+	<definition name="TaskSLA" extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/jsp/sla/taskSLA.jsp" />
+	</definition>
+	
+	<definition name="displaySLA" extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/jsp/sla/displaySLA.jsp" />
+	</definition>
+	
+	<definition name="TaskRemainderSLA" extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/jsp/sla/taskSLAReminder.jsp" />
+	</definition>
+	
+	<definition name="TaskEscalationSLA" extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/jsp/sla/taskSLAEscalation.jsp" />
+	</definition>
+	
+	
+	<definition name="TaskSLADetail" extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/jsp/sla/taskSLADetail.jsp" />
+	</definition>
+	
+	<definition name="displayCertificateSLA" extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/jsp/sla/displayCertificateSLA.jsp" />
+	</definition>
+	
+	<definition name="addCertificateSLA" extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/jsp/sla/addCertificateSLA.jsp" />
+	</definition>
+	
+
+	<definition name="FormatPage" extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/jsp/sla/formatPage.jsp" />
+	</definition>
+
+	<definition name="sla.summary" extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/jsp/sla/summary.jsp" />
+	</definition>
+	
+	<!--Start :: Added By Abhijit Nair For Property Reminder Mails-->
+	
+	<definition name="displaypropertySLAPath" extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/jsp/sla/displayPropertySLA.jsp" />
+	</definition>
+	
+	<definition name="addPropertySLApath" extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/jsp/sla/addPropertySLA.jsp" />
+	</definition>
+	
+	<!--End :: Added By Abhijit Nair For Property Reminder Mails-->
+	
+	<definition name="searchReport" extends="doc.mainLayout">
+		<put name="body" value="/jsp/Reports/SearchReport.jsp" />
+	</definition>
+	
+	<definition name="createReport" extends="doc.mainLayout">
+		<put name="body" value="/jsp/Reports/CreateNewReport.jsp" />
+	</definition>
+	<!--Start :: Added By Muktaram C. For MIS Report Creation Release #27 DEF#309-->
+	<definition name="manageReport" extends="doc.mainLayout">
+		<put name="body" value="/jsp/Reports/ManageReports.jsp" />
+	</definition>
+	<!--End :: Added By Muktaram C. For MIS Report Creation Release #27 DEF#309-->
+	<definition name="createSuccess" extends="doc.mainLayout">
+		<put name="body" value="/jsp/Reports/CreateReportSuccess.jsp" />
+	</definition>
+
+	<definition name="EditSuccess" extends="doc.mainLayout">
+		<put name="body" value="/jsp/Reports/CreateNewReport.jsp" />
+	</definition>
+	
+    <definition name="dashboardView" extends="doc.mainLayout">
+		<put name="body" value="/jsp/Reports/displayDashboard.jsp" />
+	</definition>
+
+	<definition name="dashboardfailue" extends="doc.mainLayout">
+		<put name="body" value="/jsp/Reports/dashboardFail.jsp" />
+	</definition>
+
+	<definition name="UserDelegation" extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/jsp/UserDelegation.jsp" />
+	</definition>
+
+	<definition name="docketScheduling" extends="doc.mainLayout">
+		<put name="title" value="SearchByPK" />
+		<put name="body" value="/jsp/DocketScheduling.jsp" />
+	</definition>
+
+	<!--
+		START: Code Added By Hrishikesh N. for COP Workflow on Date: 30th
+		April 2010
+	-->
+	<definition name="propSelDetailsPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/propSelDetails.jsp" />
+	</definition>
+	<!-- START REL43 CHR264 ADDED BY SHITAL 0N 25-10-13 -->
+	<definition name="copseldate" extends="doc.mainLayout">
+	<put name="body" value="/jsp/COPSelDate.jsp" /> 
+	</definition>
+	<!-- END REL43 CHR264-->
+	<!--
+		END: Code Added By Hrishikesh N. for COP Workflow on Date: 30th April
+		2010
+	-->
+	
+	<!-- Start:: Added by Megha for dynamically change theme -->
+
+		<definition name="ChangeThemeWait" extends="doc.mainLayout">
+			<put name="body" value="/jsp/ChangeThemeWait.jsp" />
+		</definition>
+		<definition name="ChangeTheme" extends="doc.mainLayout">
+			<put name="body" value="/jsp/ChangeTheme.jsp" />
+		</definition>
+
+	<!-- End:: Added by Megha for dynamically change theme -->
+	
+	<definition name="admin_console" extends="doc.mainLayout">
+			<put name="body" value="//apps/icat/jsp/scheduler/admin_console.jsp" />
+		</definition>
+	
+		<definition name="edit_holiday" extends="doc.mainLayout">
+			<put name="body" value="//apps/icat/jsp/scheduler/edit_holiday.jsp" />
+		</definition>
+	
+		<definition name="success_holiday" extends="doc.mainLayout">
+			<put name="body" value="//apps/icat/jsp/scheduler/success_holiday.jsp" />
+		</definition>
+		
+		<definition name="holiday_list" extends="doc.mainLayout">
+			<put name="body" value="//apps/icat/jsp/scheduler/display_holiday.jsp" />
+		</definition>
+		
+	<definition name="holiday_console" extends="doc.mainLayout">
+			<put name="body" value="//apps/icat/jsp/scheduler/holiday_console.jsp" />
+		</definition>
+		<!-- REL#62 -->
+		<definition name="internalTemplate" extends="doc.mainLayout">
+				<put name="body" value="/jsp/internalTemplate.jsp" />
+		</definition>
+		
+	<definition name="DownloadPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/downloads.jsp" />
+	</definition>
+	
+	<definition name="historyDataPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/HistoryData.jsp" />
+	</definition>
+	<!-- Added by Apurv -->
+	<definition name="successContactPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/SuccessPasswordMsg.jsp" />
+	</definition>
+
+<!-- END -->
+	<definition name="SearchMyDocketReportPage" extends="doc.mainLayout">
+		<put name="body" value="/jsp/SearchMyDocketReport.jsp" />
+	</definition>
+		
+		<definition name="docketNumberDataReportPage" extends="doc.mainLayout">
+		<put name="body" value="/jsp/docketNumberDataReport.jsp" />
+	</definition>
+	<definition name="SearchMyDocketReportDataPage" extends="doc.mainLayout">
+		<put name="body" value="/jsp/SearchMyDocketReportData.jsp" />
+	</definition>
+	<definition name="docketEarningsPage" extends="doc.mainLayout">
+		<put name="body" value="/jsp/DocketEarrnings.jsp" />
+	</definition>
+	
+	<definition name="docketEarningsDeptPage" extends="doc.mainLayout">
+		<put name="body" value="/jsp/DocketEarningsDept.jsp" />
+	</definition>
+	
+	<!-- START : DEBIT-CREDIT NOTE APURVK 20-OCT-2011 -->
+	<definition name="DOCKETLISTPATH" extends="doc.mainLayout">
+		<put name="body" value="/jsp/DebitCreditDocketList.jsp"></put>
+	</definition>
+	<definition name="DOCKETDETAILSPATH" extends="doc.mainLayout">
+		<put name="body" value="/jsp/DebitCreditNote.jsp"></put>
+	</definition>
+	
+	<definition name="viewHolidayPath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/viewHoliday.jsp"></put>
+	</definition>
+	<!--START CODE REL #41 CHR212 ADDED BY PRAKASH K -->
+	<definition name="CreateAppointment" extends="doc.mainLayout">
+		<put name="body" value="/jsp/appointment/CreateAppointment.jsp"></put>
+	</definition>
+	<definition name="existingAppointment" extends="doc.mainLayout">
+		<put name="body" value="/jsp/appointment/existingAppointment.jsp"></put>
+	</definition>
+	<definition name="viewAppointment" extends="doc.mainLayout">
+		<put name="body" value="/jsp/appointment/viewAppointment.jsp"></put>
+	</definition>
+	<!--END REL #41 CHR212 -->
+	
+	<!--START CODE REL #50 CHR335 ADDED BY PRAKASH K -->
+	<definition name="getDraftDocketListpath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/CertificateCompilation/draftCertificateList.jsp" />
+	</definition>
+	<definition name="uploadDraftCertificatepath" extends="doc.mainLayout">
+		<put name="body" value="/jsp/CertificateCompilation/draftCertificate.jsp" />
+	</definition>
+	
+	
+	<!--START CODE REL #44 CHR287 ADDED BY PRAKASH K FOR AUTOMATIC COP SELECTION-->
+	<definition name="propSelAvailable" extends="doc.mainLayout">
+		<put name="body" value="/jsp/propSelAvailable.jsp"></put>
+	</definition>
+	<definition name="propSelConfirm" extends="doc.mainLayout">
+		<put name="body" value="/jsp/propSelConfirm.jsp"></put>
+	</definition>
+	<definition name="offeredPropertyUpload" extends="doc.mainLayout">
+		<put name="body" value="/jsp/offeredPropertyUpload.jsp"></put>
+	</definition>
+	<definition name="randomPropSel" extends="doc.mainLayout">
+		<put name="body" value="/jsp/randomPropSel.jsp"></put>
+	</definition>
+	<definition name="COPDocketList" extends="doc.mainLayout">
+		<put name="body" value="/jsp/COPDocketList.jsp"></put>
+	</definition>
+	<!--END REL #44 CHR287 -->
+
+<!-- ADDED BY MUKTARAM C. CHR 143  RELEASE 44 -->
+	<definition name="manager.ICATCURRENCYTYPES.list" extends="doc.mainLayout">
+		<put name="title" value="ICATCURRENCYTYPES Entry" />
+		<put name="body" value="/manager/ICATCURRENCYTYPE/manageCurrencyTypes.jsp" />
+	</definition>
+	
+	<definition name="manager.ICATCURRENCYTYPES.add" extends="doc.mainLayout">
+		<put name="title" value="ICATCURRENCYTYPES Entry" />
+		<put name="body" value="/manager/ICATCURRENCYTYPE/addCurrencyTypes.jsp" />
+	</definition>
+<!--END-->
+	
+</tiles-definitions>
